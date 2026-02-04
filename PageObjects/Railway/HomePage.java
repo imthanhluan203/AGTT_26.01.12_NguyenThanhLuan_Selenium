@@ -2,7 +2,6 @@ package Railway;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.Test;
 
 import Constant.Constant;
 
@@ -16,8 +15,7 @@ public class HomePage extends GeneralPage {
 		return Constant.WEBDRIVER.findElement(_txtWelcomeMessage);
 	}
 	
-	@Test
-	public void hello() {
-		System.out.print("hello");
+	public LoginPage getLoginPage() {
+		return new LoginPage();
 	}
 }

@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-03T22:18:08 ICT" name="Default suite" finished-at="2026-02-03T22:18:21 ICT" duration-ms="12625">
+  <suite started-at="2026-02-04T09:41:38 ICT" name="Suite" finished-at="2026-02-04T09:41:58 ICT" duration-ms="20071">
     <groups>
     </groups>
-    <test started-at="2026-02-03T22:18:08 ICT" name="Default test" finished-at="2026-02-03T22:18:21 ICT" duration-ms="12625">
-      <class name="TestPackage.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.LoginTest@5e0e82ae]" started-at="2026-02-03T22:18:08 ICT" name="beforeMethod" finished-at="2026-02-03T22:18:08 ICT" duration-ms="11" status="PASS">
+    <test started-at="2026-02-04T09:41:38 ICT" name="Test" finished-at="2026-02-04T09:41:58 ICT" duration-ms="20071">
+      <class name="TestPackage.TC02">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.TC02@36fc695d]" started-at="2026-02-04T09:41:38 ICT" name="beforeMethod" finished-at="2026-02-04T09:41:41 ICT" duration-ms="3097" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC01()[pri:0, instance:TestPackage.LoginTest@5e0e82ae]" started-at="2026-02-03T22:18:08 ICT" name="TC01" finished-at="2026-02-03T22:18:21 ICT" duration-ms="12226" status="PASS">
+        <test-method signature="TC001()[pri:0, instance:TestPackage.TC02@36fc695d]" started-at="2026-02-04T09:41:41 ICT" name="TC001" finished-at="2026-02-04T09:41:58 ICT" duration-ms="16899" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC01 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@5e0e82ae]" started-at="2026-02-03T22:18:21 ICT" name="afterMethod" finished-at="2026-02-03T22:18:21 ICT" duration-ms="316" status="PASS">
+        </test-method> <!-- TC001 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.TC02@36fc695d]" started-at="2026-02-04T09:41:58 ICT" name="afterMethod" finished-at="2026-02-04T09:41:58 ICT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- TestPackage.TC02 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -27,9 +27,9 @@ public class LoginPage extends GeneralPage {
 		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage);
 	}
 
-	public HomePage login() throws InterruptedException {
-		this.getUserName().sendKeys(Constant.USERNAME);
-		this.getPassword().sendKeys(Constant.PASSWORD);
+	public HomePage login(String userName, String password) throws InterruptedException {
+		this.getUserName().sendKeys(userName);
+		this.getPassword().sendKeys(password);
 		this.getBtnLogin().click();
 		Thread.sleep(2000);
 		return new HomePage();
