@@ -6,14 +6,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import Common.CreateEmail;
 import Constant.Constant;
 import Railway.HomePage;
 import Railway.LoginPage;
 
 public class TC04 {
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod() throws Exception {
 		System.out.println("Pre-condition");
+		CreateEmail.createEmail(true);
 		Constant.WEBDRIVER = new ChromeDriver();
 	}
 	
@@ -24,7 +26,7 @@ public class TC04 {
 	}
 	
 	@Test()
-	public void TC001() throws InterruptedException {
+	public void TC001() throws Exception {
 		System.out.println("TC04 - System shows message when user enters wrong password many times");
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -33,9 +35,10 @@ public class TC04 {
 		String errorMessage = "";
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = home.gotoLoginPage();
+		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
 	
 		for(int i = 0; i < 3; i++) {
+			loginPage = home.gotoPage("Login",LoginPage.class);
 			System.out.println("Repeat step 3 and 4 three more times:" + (i + 1));
 			System.out.println("3. Enter valid information into \"Username\" textbox except \"Password\" textbox.");
 			System.out.println("4. Click on \"Login\" button");

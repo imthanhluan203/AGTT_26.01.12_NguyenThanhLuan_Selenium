@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import Common.CreateEmail;
 import Constant.Constant;
 import Railway.HomePage;
 import Railway.LoginPage;
@@ -13,8 +14,9 @@ import Railway.LoginPage;
 public class TC02 {
 	
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod() throws Exception {
 		System.out.println("Pre-condition");
+		CreateEmail.createEmail(true);
 		Constant.WEBDRIVER = new ChromeDriver();
 	}
 	
@@ -25,12 +27,12 @@ public class TC02 {
 	}
 	
 	@Test
-	public void TC001() throws InterruptedException {
+	public void TC001() throws Exception {
 		System.out.println("TC02 - User cannot login with blank \"Username\" textbox.");
 		HomePage home = new HomePage();
 		home.open();
 		
-		LoginPage loginPage = home.gotoLoginPage();
+		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
 		String errorMessage = loginPage.login("", Constant.PASSWORD).getLoginPage().getLblErrorLoginMessage().getText();
 		String expectedMessage = "There was a problem with your login and/or errors exist in your form.";
 		System.out.println(errorMessage);

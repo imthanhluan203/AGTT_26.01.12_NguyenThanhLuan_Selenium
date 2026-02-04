@@ -2,28 +2,29 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-04T17:08:56 ICT" name="Default suite" finished-at="2026-02-04T17:09:14 ICT" duration-ms="18309">
+  <suite started-at="2026-02-05T06:15:49 ICT" name="Default suite" finished-at="2026-02-05T06:16:23 ICT" duration-ms="33663">
     <groups>
     </groups>
-    <test started-at="2026-02-04T17:08:56 ICT" name="Default test" finished-at="2026-02-04T17:09:14 ICT" duration-ms="18309">
-      <class name="TestPackage.TC04">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.TC04@36fc695d]" started-at="2026-02-04T17:08:56 ICT" name="beforeMethod" finished-at="2026-02-04T17:08:58 ICT" duration-ms="2369" status="PASS">
+    <test started-at="2026-02-05T06:15:49 ICT" name="Default test" finished-at="2026-02-05T06:16:23 ICT" duration-ms="33663">
+      <class name="TestPackage.TC03">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:15:49 ICT" name="beforeMethod" finished-at="2026-02-05T06:16:17 ICT" duration-ms="27587" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC001_one()[pri:0, instance:TestPackage.TC04@36fc695d]" started-at="2026-02-04T17:08:58 ICT" name="TC001_one" finished-at="2026-02-04T17:09:14 ICT" duration-ms="15310" status="FAIL">
+        <test-method signature="TC001()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:16:17 ICT" name="TC001" finished-at="2026-02-05T06:16:23 ICT" duration-ms="5813" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[System shows message when user enters wrong password many times expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
+              <![CDATA[expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: System shows message when user enters wrong password many times expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+              <![CDATA[java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.TC04.TC001_one(TC04.java:48)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at TestPackage.TC03.TC001(TC03.java:38)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -55,12 +56,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC001_one -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.TC04@36fc695d]" started-at="2026-02-04T17:09:14 ICT" name="afterMethod" finished-at="2026-02-04T17:09:14 ICT" duration-ms="515" status="PASS">
+        </test-method> <!-- TC001 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:16:23 ICT" name="afterMethod" finished-at="2026-02-05T06:16:23 ICT" duration-ms="217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.TC04 -->
+      </class> <!-- TestPackage.TC03 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

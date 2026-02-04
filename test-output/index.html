@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\imtha\AppData\Local\Temp\testng-eclipse--940464405\testng-customsuite.xml</span>
+                    <span>C:\Users\imtha\AppData\Local\Temp\testng-eclipse-393471102\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="TestPackage.TC04" class="method navigator-link" hash-for-method="TC001_one">TC001_one</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="TestPackage.TC03" class="method navigator-link" hash-for-method="TC001">TC001</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,21 +121,22 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">TestPackage.TC04</span>
+              <span class="class-name">TestPackage.TC03</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC001_one">
-                  </a> <!-- TC001_one -->
-                  <span class="method-name">TC001_one</span>
-                  <div class="stack-trace">java.lang.AssertionError: System shows message when user enters wrong password many times expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+                  <a name="TC001">
+                  </a> <!-- TC001 -->
+                  <span class="method-name">TC001</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1590)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 	at org.testng.Assert.assertEquals(Assert.java:132)
 	at org.testng.Assert.assertEquals(Assert.java:656)
-	at TestPackage.TC04.TC001_one(TC04.java:48)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at TestPackage.TC03.TC001(TC03.java:38)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -171,7 +172,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\imtha\AppData\Local\Temp\testng-eclipse--940464405\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\imtha\AppData\Local\Temp\testng-eclipse-393471102\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -180,7 +181,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestPackage.TC04&quot;/&gt;
+      &lt;class name=&quot;TestPackage.TC03&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -222,14 +223,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC001_one')
-data.setCell(0, 2, 'TestPackage.TC04')
-data.setCell(0, 3, 15310);
+data.setCell(0, 1, 'TC001')
+data.setCell(0, 2, 'TestPackage.TC03')
+data.setCell(0, 3, 5813);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -255,7 +256,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestPackage.TC04</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestPackage.TC03</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
                 <span class="method-start">0 ms</span>
@@ -263,12 +264,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">TC001_one</span>
-                <span class="method-start">2372 ms</span>
+                <span class="method-name">TC001</span>
+                <span class="method-start">27588 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">17703 ms</span>
+                <span class="method-start">33407 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
