@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.Tab;
 
 public class LoginPage extends GeneralPage {
 	private final By _txtUsername = By.xpath("//input[@id='username']");
@@ -16,7 +17,7 @@ public class LoginPage extends GeneralPage {
 		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage);
 	}
 	public Boolean isLoggedIn() {
-		return checkTabPageExit("Login");
+		return checkTabPageExit(Tab.LOGIN);
 	}
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(String userName, String password) {

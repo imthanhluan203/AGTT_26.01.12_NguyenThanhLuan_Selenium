@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.Tab;
 
 public abstract class GeneralPage {	
 	private final String tabXpath = "//a/span[contains(text(),'%s')]";
@@ -14,18 +15,25 @@ public abstract class GeneralPage {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName)));
     }
     
-    public Boolean checkTabPageExit(String tabName) {
+    
+    public void clickTab(Tab tabName) {
+    	Utilities.click(By.xpath(String.format(tabXpath, tabName.getValue())));
+    	Utilities.waitForPageFullyLoad();
+    }
+    
+    
+    public Boolean checkTabPageExit(Tab tabName) {
     	try {
-    		Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName)));
+    		Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName.getValue())));
     		return true;
 		} catch (Exception e) {
 			return false;
 		}
     }
     
-	public <T extends GeneralPage> T gotoPage(String tabName,Class<T> pageClass)  {
+	public <T extends GeneralPage> T gotoPage(Tab tab,Class<T> pageClass)  {
 		
-		By tabPara = By.xpath(String.format(tabXpath, tabName));
+		By tabPara = By.xpath(String.format(tabXpath, tab.getValue()));
 		Utilities.click(tabPara);
 		try {
 			return pageClass.getDeclaredConstructor().newInstance();

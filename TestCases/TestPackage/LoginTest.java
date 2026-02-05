@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Common.Utilities;
-import Constant.Constant;
+import Constant.Tab;
 import Railway.GeneralPage;
 import Railway.HomePage;
 import Railway.LoginPage;
@@ -12,30 +12,29 @@ import Railway.LoginPage;
 public class LoginTest extends BaseTest{
 	
 	
-	@Test(description = "TC1: User can log into Railway with valid username and password")
+	@Test(description = "TC1: User can log into Railway with valid username and password",enabled = true)
 	public void TC1() {
-		String expectedResult = String.format("Welcome %s", myUserInfo.getFullEmailName());
+		
 		
 		System.out.println("Pre-condition: Register step");
 		register();//0  1  2
 		
+		
+		String expectedResult = String.format("Welcome %s", myUserInfo.getFullEmailName());
+		
+		
+		
 		System.out.println("1. Navigate to QA Railway Website.");
 		HomePage home = new HomePage();
 		home.open();
-		//sua lai roi qua, cho khach hang xem
-		Object[] windowHandles = Constant.WEBDRIVER.getWindowHandles().toArray();
-		String mainTab = windowHandles[0].toString();
+		//sua lai roi qua, cho khach hang xem -->//Đã fix
 		
-		for (int i = 1; i < windowHandles.length; i++) { // 1 2 confirm
-		    Constant.WEBDRIVER.switchTo().window(windowHandles[i].toString());
-		    Utilities.waitForPageFullyLoad();
-		    Constant.WEBDRIVER.close(); 
-		}
-		Constant.WEBDRIVER.switchTo().window(mainTab);
+
+		Utilities.closeAllTabsExceptMain();
 	    
 	    System.out.println("2. Click on \"Login\" tab.");
-	    //Su dung enum cho tab name
-		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
+	    //Su dung enum cho tab name  --> Đã fix
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
 		GeneralPage myPage = loginPage.login(myUserInfo.getFullEmailName(), myUserInfo.getPassword());
@@ -62,12 +61,12 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("2. Click on \"Login\" tab");
 		
-		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. User doesn't type any words into \"Username\" textbox but enter valid information into \"Password\" textbox ");
 		System.out.println("4. Click on \"Login\" button");
 	
-		GeneralPage myPage = loginPage.login("", Constant.PASSWORD);
+		GeneralPage myPage = loginPage.login("", myUserInfo.getPassword());
 		
 		System.out.println("Verify that User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");
 		
@@ -94,12 +93,12 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("2. Click on \"Login\" tab");
 		
-		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and invalid Password");		
 		System.out.println("4. Click on \"Login\" button");
 		
-		GeneralPage myPage = loginPage.login(Constant.USERNAME ,"x" + Constant.PASSWORD);
+		GeneralPage myPage = loginPage.login(myUserInfo.getFullEmailName(),"x" + myUserInfo.getPassword());
 		
 		System.out.println("Verify that Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");
 		
@@ -128,7 +127,7 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("2. Click on \"Login\" tab");
 		
-		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		
 		for(int i=0;i<3;i++) {
@@ -136,7 +135,7 @@ public class LoginTest extends BaseTest{
 			System.out.println("3. Enter valid information into \"Username\" textbox except \"Password\" textbox.");
 			System.out.println("4. Click on \"Login\" button");
 			
-			GeneralPage myPage = loginPage.login(Constant.USERNAME ,"x" + Constant.PASSWORD);
+			GeneralPage myPage = loginPage.login(myUserInfo.getFullEmailName() ,"x" + myUserInfo.getPassword());
 			
 			if (myPage instanceof HomePage) {
 				System.out.println("This is Home Page - Login Successfully");
@@ -152,7 +151,7 @@ public class LoginTest extends BaseTest{
 		System.out.printf("Run step 3 and 4: 4 time. %n");
 		System.out.println("Verify that user can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.");
 	
-		GeneralPage myPage = loginPage.login(Constant.USERNAME ,"");
+		GeneralPage myPage =  loginPage.login(myUserInfo.getFullEmailName() ,"x" + myUserInfo.getPassword());
 		
 		if (myPage instanceof HomePage) {
 			System.out.println("This is Home Page - Login Successfully");
@@ -172,27 +171,21 @@ public class LoginTest extends BaseTest{
 		String expectedResult = "Invalid username or password. Please try again.";
 		
 		System.out.println("Pre-condition: a not-active account is existing");
-
+		
 		registerAndNotActivated();
 		
 		System.out.println("1. Navigate to QA Railway Website.");
 		HomePage home = new HomePage();
 		home.open();
 		
-		Object[] windowHandles = Constant.WEBDRIVER.getWindowHandles().toArray();
-		String mainTab = windowHandles[0].toString();
-		for (int i = 1; i < windowHandles.length; i++) {
-		    Constant.WEBDRIVER.switchTo().window(windowHandles[i].toString());
-		    Utilities.waitForPageFullyLoad();
-		    Constant.WEBDRIVER.close(); 
-		}
-		Constant.WEBDRIVER.switchTo().window(mainTab);
+		Utilities.closeAllTabsExceptMain();
 	    
 	    System.out.println("2. Click on \"Login\" tab.");
-		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
-		GeneralPage myPage = loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+		GeneralPage myPage = loginPage.login(myUserInfo.getFullEmailName(), myUserInfo.getPassword());
+		
 		if (myPage instanceof HomePage) {
 			Assert.fail("User can't login and message \"Invalid username or password. Please try again.\" appears.");
 		   
