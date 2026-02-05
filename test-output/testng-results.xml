@@ -1,67 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T06:15:49 ICT" name="Default suite" finished-at="2026-02-05T06:16:23 ICT" duration-ms="33663">
+  <suite started-at="2026-02-05T16:20:26 ICT" name="Default suite" finished-at="2026-02-05T16:20:49 ICT" duration-ms="23106">
     <groups>
     </groups>
-    <test started-at="2026-02-05T06:15:49 ICT" name="Default test" finished-at="2026-02-05T06:16:23 ICT" duration-ms="33663">
-      <class name="TestPackage.TC03">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:15:49 ICT" name="beforeMethod" finished-at="2026-02-05T06:16:17 ICT" duration-ms="27587" status="PASS">
+    <test started-at="2026-02-05T16:20:26 ICT" name="Default test" finished-at="2026-02-05T16:20:49 ICT" duration-ms="23106">
+      <class name="TestPackage.LoginTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:26 ICT" name="beforeMethod" finished-at="2026-02-05T16:20:30 ICT" duration-ms="3400" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC001()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:16:17 ICT" name="TC001" finished-at="2026-02-05T06:16:23 ICT" duration-ms="5813" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at TestPackage.TC03.TC001(TC03.java:38)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="TC05()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:30 ICT" name="TC05" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2026-02-05T16:20:49 ICT" duration-ms="19482" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC001 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.TC03@36fc695d]" started-at="2026-02-05T06:16:23 ICT" name="afterMethod" finished-at="2026-02-05T06:16:23 ICT" duration-ms="217" status="PASS">
+        </test-method> <!-- TC05 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:49 ICT" name="afterMethod" finished-at="2026-02-05T16:20:49 ICT" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.TC03 -->
+      </class> <!-- TestPackage.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

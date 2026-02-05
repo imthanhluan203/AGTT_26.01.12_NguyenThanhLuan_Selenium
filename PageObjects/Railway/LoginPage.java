@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import Common.Utilities;
 import Constant.Constant;
 
 public class LoginPage extends GeneralPage {
@@ -11,28 +12,22 @@ public class LoginPage extends GeneralPage {
 	private final By _btnLogin = By.xpath("//input[@type='submit']");
 	private final By _lblErrorLoginMessage = By.xpath("//p[@class='message error LoginForm']");
 
-	public WebElement getUserName() {
-		return Constant.WEBDRIVER.findElement(_txtUsername);
-	}
-
-	public WebElement getPassword() {
-		return Constant.WEBDRIVER.findElement(_txtPassword);
-	}
-
-	public WebElement getBtnLogin() {
-		return Constant.WEBDRIVER.findElement(_btnLogin);
-	}
-
 	public WebElement getLblErrorLoginMessage() {
 		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage);
 	}
-
-	public HomePage login(String userName, String password) throws InterruptedException {
-		this.getUserName().sendKeys(userName);
-		this.getPassword().sendKeys(password);
-		this.getBtnLogin().click();
-		Thread.sleep(2000);
-		return new HomePage();
+	public Boolean isLoggedIn() {
+		return checkTabPageExit("Login");
+	}
+	@SuppressWarnings("unchecked")
+	public <T extends GeneralPage> T login(String userName, String password) {
+		Utilities.enter(_txtUsername, userName);
+		Utilities.enter(_txtPassword,password);
+		Utilities.click(_btnLogin);
+		Utilities.waitForPageFullyLoad();
+		if(isLoggedIn()) {
+			return (T) this;
+		}
+		return (T) new HomePage();
 	}
 
 }
