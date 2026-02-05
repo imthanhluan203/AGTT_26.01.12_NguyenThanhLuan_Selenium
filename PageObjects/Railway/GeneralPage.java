@@ -8,6 +8,8 @@ import Constant.Constant;
 
 public abstract class GeneralPage {	
 	private final String tabXpath = "//a/span[contains(text(),'%s')]";
+	
+	
     public WebElement getTab(String tabName) {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName)));
     }

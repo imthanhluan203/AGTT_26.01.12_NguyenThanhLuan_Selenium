@@ -2,24 +2,24 @@
 <testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-05T16:20:26 ICT" name="Default suite" finished-at="2026-02-05T16:20:49 ICT" duration-ms="23106">
+  <suite started-at="2026-02-05T23:02:18 ICT" name="Suite" finished-at="2026-02-05T23:02:53 ICT" duration-ms="34837">
     <groups>
     </groups>
-    <test started-at="2026-02-05T16:20:26 ICT" name="Default test" finished-at="2026-02-05T16:20:49 ICT" duration-ms="23106">
+    <test started-at="2026-02-05T23:02:18 ICT" name="Test" finished-at="2026-02-05T23:02:53 ICT" duration-ms="34837">
       <class name="TestPackage.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:26 ICT" name="beforeMethod" finished-at="2026-02-05T16:20:30 ICT" duration-ms="3400" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.LoginTest@28701274]" started-at="2026-02-05T23:02:18 ICT" name="beforeMethod" finished-at="2026-02-05T23:02:20 ICT" duration-ms="2235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC05()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:30 ICT" name="TC05" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2026-02-05T16:20:49 ICT" duration-ms="19482" status="PASS">
+        <test-method signature="TC1()[pri:0, instance:TestPackage.LoginTest@28701274]" started-at="2026-02-05T23:02:20 ICT" name="TC1" description="TC1: User can log into Railway with valid username and password" finished-at="2026-02-05T23:02:52 ICT" duration-ms="32366" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC05 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@2b71e916]" started-at="2026-02-05T16:20:49 ICT" name="afterMethod" finished-at="2026-02-05T16:20:49 ICT" duration-ms="175" status="PASS">
+        </test-method> <!-- TC1 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@28701274]" started-at="2026-02-05T23:02:52 ICT" name="afterMethod" finished-at="2026-02-05T23:02:53 ICT" duration-ms="187" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- TestPackage.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

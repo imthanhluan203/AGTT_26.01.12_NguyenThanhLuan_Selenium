@@ -34,9 +34,13 @@ public class LogoutTest extends BaseTest {
 		
 		System.out.println("3. Click on \"FAQ\" tab");
 		
-		myPage.gotoPage("FAQ", FAQPage.class);
+		FAQPage faqPage = myPage.gotoPage("FAQ", FAQPage.class);
 		
 		System.out.println("4. Click on \"Log out\" tab");
+		
+		faqPage.getTab("Logout").click();
+		
+		
 		System.out.println("Verify that Home page displays \"Log out\" tab is disappeared.");
 	}
 }

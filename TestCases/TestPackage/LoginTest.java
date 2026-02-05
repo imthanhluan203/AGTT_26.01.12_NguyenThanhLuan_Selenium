@@ -12,20 +12,21 @@ import Railway.LoginPage;
 public class LoginTest extends BaseTest{
 	
 	
-	@Test(description = "TC1: User can log into Railway with valid username and password",enabled=false)
+	@Test(description = "TC1: User can log into Railway with valid username and password")
 	public void TC1() {
-		String expectedResult = String.format("Welcome %s", Constant.USERNAME);
+		String expectedResult = String.format("Welcome %s", myUserInfo.getFullEmailName());
 		
 		System.out.println("Pre-condition: Register step");
-		register();
+		register();//0  1  2
 		
 		System.out.println("1. Navigate to QA Railway Website.");
 		HomePage home = new HomePage();
 		home.open();
-		
+		//sua lai roi qua, cho khach hang xem
 		Object[] windowHandles = Constant.WEBDRIVER.getWindowHandles().toArray();
 		String mainTab = windowHandles[0].toString();
-		for (int i = 1; i < windowHandles.length; i++) {
+		
+		for (int i = 1; i < windowHandles.length; i++) { // 1 2 confirm
 		    Constant.WEBDRIVER.switchTo().window(windowHandles[i].toString());
 		    Utilities.waitForPageFullyLoad();
 		    Constant.WEBDRIVER.close(); 
@@ -33,10 +34,11 @@ public class LoginTest extends BaseTest{
 		Constant.WEBDRIVER.switchTo().window(mainTab);
 	    
 	    System.out.println("2. Click on \"Login\" tab.");
+	    //Su dung enum cho tab name
 		LoginPage loginPage = home.gotoPage("Login",LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
-		GeneralPage myPage = loginPage.login(Constant.USERNAME, Constant.PASSWORD);
+		GeneralPage myPage = loginPage.login(myUserInfo.getFullEmailName(), myUserInfo.getPassword());
 		if (myPage instanceof HomePage) {
 			System.out.println("This is Home Page - Login Successfully");
 			String actualResult = ((HomePage) myPage).getWelcomeMessage().getText();
@@ -165,7 +167,7 @@ public class LoginTest extends BaseTest{
 	}
 	
 	
-	@Test(description = "User can't login with an account hasn't been activated")
+	@Test(description = "User can't login with an account hasn't been activated", enabled = false)
 	public void TC05() {
 		String expectedResult = "Invalid username or password. Please try again.";
 		
