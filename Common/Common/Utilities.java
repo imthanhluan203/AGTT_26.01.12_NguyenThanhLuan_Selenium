@@ -31,7 +31,9 @@ public class Utilities {
 		js.executeScript("arguments[0].click();", element);
 	}
 	public static void enter(By locator,String key) {
-		Utilities.waitForElementLocated(locator).sendKeys(key);
+		WebElement element = Utilities.waitForElementLocated(locator);
+		element.clear();
+		element.sendKeys(key);
 	}
 	
 	public static WebElement waitForElementLocated(By locator) {

@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="TC1"/>
+          <include name="TC4"/>
         </methods>
       </class> <!-- TestPackage.LoginTest -->
     </classes>

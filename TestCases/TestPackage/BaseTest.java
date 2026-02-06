@@ -3,14 +3,12 @@ package TestPackage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
-import Common.Utilities;
 import Constant.Constant;
 import Constant.Tab;
 import Guerrillamail.GuerrillaMail;
-import Guerrillamail.UserInfo;
 import Railway.HomePage;
 import Railway.RegisterPage;
+import UserMail.UserInfo;
 
 public abstract class BaseTest {
 	
@@ -24,10 +22,9 @@ public abstract class BaseTest {
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Post-condition");
-//		Constant.WEBDRIVER.quit();
+		Constant.WEBDRIVER.quit();
 	}
-	public void register() {
-		myUserInfo = new UserInfo(Utilities.generateRandomString(15), "123456789");
+	public void register(UserInfo myUserInfo) {
 		GuerrillaMail mail = new GuerrillaMail(myUserInfo);
 		mail.createAnEmail(); //0
 		
@@ -42,13 +39,13 @@ public abstract class BaseTest {
 		
 	}
 	
-	public void registerAndNotActivated() {
-		myUserInfo = new UserInfo(Utilities.generateRandomString(15), "123456789");
+	public void registerAndNotActivated(UserInfo myUserInfo) {
 		GuerrillaMail mail = new GuerrillaMail(myUserInfo);
 		mail.createAnEmail();
 		
 	    HomePage home = new HomePage();
 		home.open();
+		
 		RegisterPage myPage = home.gotoPage(Tab.REGISTER, RegisterPage.class);
 		myPage.register(myUserInfo);
 		

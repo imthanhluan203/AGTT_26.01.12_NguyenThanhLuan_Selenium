@@ -5,6 +5,7 @@ import org.openqa.selenium.WindowType;
 
 import Common.Utilities;
 import Constant.Constant;
+import UserMail.UserInfo;
 
 public class GuerrillaMail {
 	

@@ -1,4 +1,4 @@
-package Guerrillamail;
+package UserMail;
 
 import Constant.Constant;
 
