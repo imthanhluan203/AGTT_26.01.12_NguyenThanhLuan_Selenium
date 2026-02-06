@@ -1,7 +1,6 @@
 package Railway;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
@@ -14,8 +13,8 @@ public class LoginPage extends GeneralPage {
 	private final By _btnLogin = By.xpath("//input[@type='submit']");
 	private final By _lblErrorLoginMessage = By.xpath("//p[@class='message error LoginForm']");
 
-	public WebElement getLblErrorLoginMessage() {
-		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage);
+	public String getLblErrorLoginMessage() {
+		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage).getText();
 	}
 	public Boolean isLoggedIn() {
 		return checkTabPageExit(Tab.LOGIN);

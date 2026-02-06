@@ -15,11 +15,12 @@ public abstract class GeneralPage {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName)));
     }
     
-    
-    public void clickTab(Tab tabName) {
-    	Utilities.click(By.xpath(String.format(tabXpath, tabName.getValue())));
-    	Utilities.waitForPageFullyLoad();
-    }
+    //Tra ve 1 page cu the ==> bo
+//    public void clickTab(Tab tabName) {
+//    	Utilities.click(By.xpath(String.format(tabXpath, tabName.getValue())));
+//    	Utilities.waitForPageFullyLoad();
+//    	
+//    }
     
     
     public Boolean checkTabPageExit(Tab tabName) {

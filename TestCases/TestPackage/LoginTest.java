@@ -29,9 +29,13 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("3. Enter valid Email and Password.");
 		HomePage myPage = loginPage.login(myUserInfo);
+		// ko lay webelement ra, in ra verify step
+		String actualResult = myPage.getWelcomeMessage();
 		
-		String actualResult = myPage.getWelcomeMessage().getText();
-		Assert.assertEquals(actualResult, expectedResult, "User is logged into Railway. Welcome user message is displayed");		   
+		String verifyString = "VP: User is logged into Railway. Welcome user message is displayed";
+		System.out.println(verifyString);
+		
+		Assert.assertEquals(actualResult, expectedResult, verifyString);		   
 		
 	}
 	
@@ -59,10 +63,13 @@ public class LoginTest extends BaseTest{
 	
 		LoginPage myPage = loginPage.login(myUserInfo);
 		
-		System.out.println("Verify that User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");
+		
+		
+		String verifyString = "VP: User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.";
+		System.out.println(verifyString);
 					    
-	    String actualResult = myPage.getLblErrorLoginMessage().getText();
-		Assert.assertEquals(actualResult, expectedResult, "Verify that User can't login and message \"There was a problem with your login and/or errors exist in your form. \" appears.");		
+	    String actualResult = myPage.getLblErrorLoginMessage();
+		Assert.assertEquals(actualResult, expectedResult, verifyString);		
 	}
 	
 	@Test(description = "User cannot log into Railway with invalid password.", enabled = false)
@@ -86,10 +93,10 @@ public class LoginTest extends BaseTest{
 		
 		LoginPage myPage = loginPage.login(myUserInfo);
 		
-		System.out.println("Verify that Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");
-	    String actualResult = ((LoginPage) myPage).getLblErrorLoginMessage().getText();
-	    
-		Assert.assertEquals(actualResult, expectedResult, "Verify that Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed");			
+	    String actualResult = myPage.getLblErrorLoginMessage();
+		String verifyString = "Verify that Error message \"There was a problem with your login and/or errors exist in your form.\" is displayed";
+
+		Assert.assertEquals(actualResult, expectedResult, verifyString);
 	}
 	
 	
@@ -117,16 +124,17 @@ public class LoginTest extends BaseTest{
 			
 			LoginPage myPage = loginPage.login(myUserInfo);
 			    
-		    String actualResult = myPage.getLblErrorLoginMessage().getText();
+		    String actualResult = myPage.getLblErrorLoginMessage();
 			Assert.assertEquals(actualResult, expectedResult1, "Verify that invalid username or password. Please try again.");
 		}
-		System.out.printf("Run step 3 and 4: 4 time. %n");
-		System.out.println("VP: User can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.");
-	
+		System.out.printf("Run step 3 and 4: 4 time. %n");	
 		LoginPage myPage =  loginPage.login(myUserInfo);		
-		    
-	    String actualResult = myPage.getLblErrorLoginMessage().getText();
-		Assert.assertEquals(actualResult, expectedResult2, "VP: User can't login and message you have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.");
+	    String actualResult = myPage.getLblErrorLoginMessage();
+	    
+	    
+		String verifyString = "VP: User can't login and message \"You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.\" appears.";
+		System.out.println(verifyString);
+		Assert.assertEquals(actualResult, expectedResult2, verifyString);
 	}
 	
 	
@@ -147,11 +155,12 @@ public class LoginTest extends BaseTest{
 		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
-		LoginPage myPage = loginPage.login(myUserInfo);
-		
-		System.out.println("VP: User can't login and message \"Invalid username or password. Please try again.\" appears.");
-		
-	    String actualResult = myPage.getLblErrorLoginMessage().getText();
-	    Assert.assertEquals(actualResult, expectedResult, "VP: User can't login and message \"Invalid username or password. Please try again.\" appears.");
+		LoginPage myPage = loginPage.login(myUserInfo);		
+	    String actualResult = myPage.getLblErrorLoginMessage();
+	    
+	    
+		String verifyString = "VP: User can't login and message \"Invalid username or password. Please try again.\" appears.";
+		System.out.println(verifyString);
+	    Assert.assertEquals(actualResult, expectedResult, verifyString);
 	}
 }
