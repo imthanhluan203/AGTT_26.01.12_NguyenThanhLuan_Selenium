@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="TestPackage.CreateAccountTest"/>
+      <class name="TestPackage.ResetPasswordTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

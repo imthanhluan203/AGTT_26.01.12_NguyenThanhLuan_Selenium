@@ -15,7 +15,7 @@ public class HomePage extends GeneralPage {
 		return this;
 	}
 	public String getWelcomeMessage() {
-		return Constant.WEBDRIVER.findElement(_txtWelcomeMessage).getText();
+		return Utilities.getTextElement(_txtWelcomeMessage);
 	}
 	
 	public RegisterPage getCreateAccountPage() {

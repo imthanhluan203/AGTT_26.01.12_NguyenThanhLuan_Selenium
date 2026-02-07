@@ -36,6 +36,12 @@ public class Utilities {
 		return element.getText();
 	}
 	
+	public static String getValueElement(By locator) {
+		WebElement element = Utilities.waitForElementLocated(locator);
+		return element.getAttribute("value");
+	}
+	
+	
 	public static void enter(By locator,String key) {
 		WebElement element = Utilities.waitForElementLocated(locator);
 		element.clear();

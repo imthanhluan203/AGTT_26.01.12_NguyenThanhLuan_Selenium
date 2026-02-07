@@ -115,7 +115,7 @@ public class CreateAccountTest extends BaseTest{
 		System.out.println("6. Login to the mailbox");
 		GuerrillaMail mail = new GuerrillaMail(myUserInfo);
 		Constant.WEBDRIVER.get(Constant.EMAIL_URL);
-		mail.setAnEmail(myUserInfo.getUserName());;
+		mail.setAnEmail();;
 		
 		System.out.println("7. Open email with subject containing \"Please confirm your account\"  and the email of the new account at step 3");		
 		System.out.println("8. Click on the activate link");

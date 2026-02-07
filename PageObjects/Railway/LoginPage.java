@@ -3,7 +3,6 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
-import Constant.Constant;
 import Constant.Tab;
 import UserMail.UserInfo;
 
@@ -12,13 +11,26 @@ public class LoginPage extends GeneralPage {
 	private final By _txtPassword = By.xpath("//input[@id='password']");
 	private final By _btnLogin = By.xpath("//input[@type='submit']");
 	private final By _lblErrorLoginMessage = By.xpath("//p[@class='message error LoginForm']");
+	private final By _linkforgotPassword = By.xpath("//a[text()='Forgot Password page']");
+	private final By _txtEmailReset = By.xpath("//input[@id='email']");
+	private final By _btnSubmitReset = By.xpath("//input[@type='submit']");
 
 	public String getLblErrorLoginMessage() {
-		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage).getText();
+		return Utilities.getTextElement(_lblErrorLoginMessage);
 	}
 	public Boolean isLoggedIn() {
 		return checkTabPageExist(Tab.LOGIN);
 	}
+	
+	public void clickForgotPassword() {
+		Utilities.click(_linkforgotPassword);
+	}
+	
+	public void sendRequestReset(String input) {
+		Utilities.enter(_txtEmailReset, input);
+		Utilities.click(_btnSubmitReset);
+	}
+	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(UserInfo myUser) {
 		Utilities.enter(_txtUsername, myUser.getName());

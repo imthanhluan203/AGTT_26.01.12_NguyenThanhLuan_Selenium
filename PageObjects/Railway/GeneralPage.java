@@ -14,15 +14,7 @@ public abstract class GeneralPage {
     public WebElement getTab(String tabName) {
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName)));
     }
-    
-    //Tra ve 1 page cu the ==> bo
-//    public void clickTab(Tab tabName) {
-//    	Utilities.click(By.xpath(String.format(tabXpath, tabName.getValue())));
-//    	Utilities.waitForPageFullyLoad();
-//    	
-//    }
-    
-    
+      
     public Boolean checkTabPageExist(Tab tabName) {
     	try {
     		Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName.getValue())));
