@@ -17,7 +17,7 @@ public class LoginPage extends GeneralPage {
 		return Constant.WEBDRIVER.findElement(_lblErrorLoginMessage).getText();
 	}
 	public Boolean isLoggedIn() {
-		return checkTabPageExit(Tab.LOGIN);
+		return checkTabPageExist(Tab.LOGIN);
 	}
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(UserInfo myUser) {

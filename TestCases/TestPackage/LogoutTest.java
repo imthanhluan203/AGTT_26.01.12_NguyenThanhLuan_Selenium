@@ -36,7 +36,7 @@ public class LogoutTest extends BaseTest {
 		
 		System.out.println("VP: Verify that Home page displays \"Log out\" tab is disappeared.");
 		
-		Assert.assertTrue(!home.checkTabPageExit(Tab.LOGOUT), "VP: Verify that Home page displays \"Log out\" tab is disappeared.");
+		Assert.assertTrue(!home.checkTabPageExist(Tab.LOGOUT), "VP: Verify that Home page displays \"Log out\" tab is disappeared.");
 	}
 	
 }

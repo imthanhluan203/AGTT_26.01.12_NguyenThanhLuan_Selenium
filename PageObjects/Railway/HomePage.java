@@ -1,6 +1,8 @@
 package Railway;
 
 import org.openqa.selenium.By;
+
+import Common.Utilities;
 import Constant.Constant;
 
 public class HomePage extends GeneralPage {
@@ -16,8 +18,9 @@ public class HomePage extends GeneralPage {
 		return Constant.WEBDRIVER.findElement(_txtWelcomeMessage).getText();
 	}
 	
-	public By getCreateAccountLink() {
-		return _linkCreateAccount;
+	public RegisterPage getCreateAccountPage() {
+		Utilities.click(_linkCreateAccount);
+		return new RegisterPage();
 	}
 	
 	public LoginPage getLoginPage() {

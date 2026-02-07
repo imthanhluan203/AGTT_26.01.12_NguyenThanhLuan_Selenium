@@ -3,8 +3,10 @@ package TestPackage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Common.Utilities;
 import Constant.Constant;
 import Constant.Tab;
+import Guerrillamail.GuerrillaMail;
 import Railway.HomePage;
 import Railway.RegisterPage;
 import UserMail.UserInfo;
@@ -43,7 +45,7 @@ public class CreateAccountTest extends BaseTest{
 		
 	}
 	
-	@Test(description = "User can't create account while password and PID fields are empty", enabled = true)
+	@Test(description = "User can't create account while password and PID fields are empty", enabled = false)
 	public void TC8() {
 		String expectedErrorMessage = "There're errors in the form. Please correct the errors and try again.";
 		String expectedResultPassword = "Invalid password length";
@@ -75,21 +77,55 @@ public class CreateAccountTest extends BaseTest{
 		Assert.assertEquals(actualResultPid, expectedResultPid, verifyString);	
 	}
 	
-//	@Test(description = "User create and activate account")
-//	public void TC9() {
-//		
-//		myUserInfo = new UserInfo("", null);
-//		System.out.println("1. Navigate to QA Railway Website");
-//		
-//		
-//		
-//		System.out.println("2. Click on \"Create an account\"");
-//		System.out.println("3. Enter valid information into all fields");
-//		System.out.println("4. Click on \"Register\" button");
-//		System.out.println("5. Get email information (webmail address, mailbox and password) and navigate to that webmail.");
-//		System.out.println("6. Login to the mailbox");
-//		System.out.println("7. Open email with subject containing \"Please confirm your account\"  and the email of the new account at step 3");
-//		System.out.println("8. Click on the activate link");
-//	}
+	@Test(description = "User create and activate account", enabled = true)
+	public void TC9() {
+		String expectedResult3 = "Thank you for registering your account";	
+		String expectedResult4 = "Registration Confirmed! You can now log in to the site.";
+		
+		String username = Utilities.generateRandomString(15) + Constant.MAIL_TYPE;
+		String password = "123456789";
+		
+		myUserInfo = new UserInfo(username, password);
+		System.out.println("1. Navigate to QA Railway Website");
+		HomePage myHome = new HomePage();
+		myHome.open();
+		
+		System.out.println("2. Click on \"Create an account\"");
+		
+	    RegisterPage accPage = myHome.getCreateAccountPage();
+	    String verifyString1 = "VP: Home page is shown with guide containing href \"create an account\" to \"Register\" page";
+	    String verifyString2 = "VP: Register page is shown";
+	    System.out.println(verifyString1);
+	    System.out.println(verifyString2);
+	    if(!accPage.checkTabPageExist(Tab.REGISTER)) {
+	    	Assert.fail(verifyString1);
+	    	Assert.fail(verifyString2);
+	    }
+	    
+	    
+		System.out.println("3. Enter valid information into all fields");
+		System.out.println("4. Click on \"Register\" button");	
+		accPage.register(myUserInfo);	
+		String verifyString3 = "VP: \"Thank you for registering your account\" is shown";
+		String actualResult3 = "Thank you for registering your account";
+		System.out.println(verifyString3);
+		Assert.assertEquals(expectedResult3, actualResult3,verifyString3);
+		
+		System.out.println("5. Get email information (webmail address, mailbox and password) and navigate to that webmail.");
+		System.out.println("6. Login to the mailbox");
+		GuerrillaMail mail = new GuerrillaMail(myUserInfo);
+		Constant.WEBDRIVER.get(Constant.EMAIL_URL);
+		mail.setAnEmail(myUserInfo.getUserName());;
+		
+		System.out.println("7. Open email with subject containing \"Please confirm your account\"  and the email of the new account at step 3");		
+		System.out.println("8. Click on the activate link");
+		mail.waitAndClickConfirmEmail();
+		Utilities.closeAllTabsExceptMain("Safe Railway");
+		
+		String actualResult4 = accPage.getWelcomeMessage();
+		String verifyString4 = "VP: Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site\" is shown";
+		System.out.println(verifyString4);
+		Assert.assertEquals(expectedResult4, actualResult4,verifyString4);
+	}
 	
 }

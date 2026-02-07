@@ -6,8 +6,8 @@
       <class name="TestPackage.CreateAccountTest">
         <methods>
           <include name="beforeMethod"/>
-          <include name="TC8"/>
           <include name="afterMethod"/>
+          <include name="TC9"/>
         </methods>
       </class> <!-- TestPackage.CreateAccountTest -->
     </classes>

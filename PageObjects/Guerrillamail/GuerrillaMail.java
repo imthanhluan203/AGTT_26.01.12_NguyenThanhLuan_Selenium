@@ -26,7 +26,7 @@ public class GuerrillaMail {
 	
 	public void createAnEmail() {
 		Constant.WEBDRIVER.get(Constant.EMAIL_URL);
-		this.setAnEmail(userInfo.getName());	
+		this.setAnEmail(userInfo.getUserName());	
 		Constant.WEBDRIVER.switchTo().newWindow(WindowType.TAB);
 	    Constant.WEBDRIVER.get(Constant.RAILWAY_URL);   
 	}

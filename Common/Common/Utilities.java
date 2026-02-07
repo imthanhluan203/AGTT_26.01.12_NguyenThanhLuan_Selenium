@@ -30,6 +30,12 @@ public class Utilities {
 		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
 		js.executeScript("arguments[0].click();", element);
 	}
+	
+	public static String getTextElement(By locator) {
+		WebElement element = Utilities.waitForElementLocated(locator);
+		return element.getText();
+	}
+	
 	public static void enter(By locator,String key) {
 		WebElement element = Utilities.waitForElementLocated(locator);
 		element.clear();
@@ -45,14 +51,14 @@ public class Utilities {
 	    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
 	}
 	
-	public static void closeAllTabsExceptMain() {
-	    String mainTab = Constant.WEBDRIVER.getWindowHandle();
+	public static void closeAllTabsExceptMain(String tabtitle) {
 	    for (String handle : Constant.WEBDRIVER.getWindowHandles()) {
-	        if (!handle.equals(mainTab)) {
-	            Constant.WEBDRIVER.switchTo().window(handle);
-	            Constant.WEBDRIVER.close();
+	        Constant.WEBDRIVER.switchTo().window(handle);
+	        if(!Constant.WEBDRIVER.getTitle().contains(tabtitle)) {
+	        	Constant.WEBDRIVER.close();
 	        }
 	    }
+	    String mainTab = Constant.WEBDRIVER.getWindowHandle();
 	    Constant.WEBDRIVER.switchTo().window(mainTab);
 	}
 

@@ -3,7 +3,6 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
-import Constant.Constant;
 import UserMail.UserInfo;
 
 public class RegisterPage extends GeneralPage {
@@ -15,23 +14,31 @@ public class RegisterPage extends GeneralPage {
 	private final By _txtErrorMessage = By.xpath("//p[@class='message error']");
 	private final By _txtErrorInvalidPassword = By.xpath("//li[@class='password']//label[@class='validation-error']");
 	private final By _txtErrorInvalidPid = By.xpath("//li[@class='pid-number']//label[@class='validation-error']");
+	private final By _txtWelcomeMessage = By.xpath("//div[@id='content']/p");
+	private final By _txtThankyouMessage = By.xpath("//h1");
 	
+	
+	public String getThankyouMessage() {
+		return Utilities.getTextElement(_txtThankyouMessage);
+	}
+	
+	public String getWelcomeMessage() {
+		return Utilities.getTextElement(_txtWelcomeMessage);
+	}
 	
 	public String getErrorMessage() {
-		return Constant.WEBDRIVER.findElement(_txtErrorMessage).getText();
+		return Utilities.getTextElement(_txtErrorMessage);
 	}
 	
 	public String getErrorInvalidPassword() {
-		return Constant.WEBDRIVER.findElement(_txtErrorInvalidPassword).getText();
+		return Utilities.getTextElement(_txtErrorInvalidPassword);
 	}
 	
 	public String getErrorInvalidPid() {
-		return Constant.WEBDRIVER.findElement(_txtErrorInvalidPid).getText();
+		return Utilities.getTextElement(_txtErrorInvalidPid);
 	}
 	
 	public RegisterPage register(UserInfo myInfo)  {
-		
-		System.out.println(myInfo.getName());
 		Utilities.enter(_txtUsername, myInfo.getName());
 		Utilities.enter(_txtPassword, myInfo.getPassword());
 		Utilities.enter(_txtConfirmPassword, myInfo.getPassword());

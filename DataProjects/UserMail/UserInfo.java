@@ -1,6 +1,5 @@
 package UserMail;
 
-import Constant.Constant;
 
 public class UserInfo {
 	private String name;
@@ -17,8 +16,8 @@ public class UserInfo {
 		this.pid = pid;
 	}
 	
-	public String getFullEmailName() {
-		return String.format("%s%s",name,Constant.MAIL_TYPE);
+	public String getUserName() {
+		return name.substring(0, name.indexOf("@"));
 	}
 	
 	public String getName() {

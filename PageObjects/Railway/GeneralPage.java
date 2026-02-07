@@ -23,7 +23,7 @@ public abstract class GeneralPage {
 //    }
     
     
-    public Boolean checkTabPageExit(Tab tabName) {
+    public Boolean checkTabPageExist(Tab tabName) {
     	try {
     		Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName.getValue())));
     		return true;
