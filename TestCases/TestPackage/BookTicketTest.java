@@ -54,8 +54,21 @@ public class BookTicketTest extends BaseTest {
 		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_FROM), myTicket.getDepartFrom(),verifyString);
 		Assert.assertEquals(actualResults.get(BookTicketFormField.ARRIVE_AT), myTicket.getArriveAt(),verifyString);
 		Assert.assertEquals(actualResults.get(BookTicketFormField.SEAT_TYPE), myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.TICKET_AMOUNT), myTicket.getTicketAmount(),verifyString);
-
+		Assert.assertEquals(actualResults.get(BookTicketFormField.TICKET_AMOUNT), myTicket.getTicketAmount(),verifyString);		
+	}
+	
+	@Test(description = "User can book many tickets at a time", enabled = true)
+	public void TC13() {
+		System.out.println("Pre-condition: an actived account is existing");
+		System.out.println("1. Navigate to QA Railway Website");
+		System.out.println("2. Login with a valid account ");
+		System.out.println("3. Click on \"Book ticket\" tab");
+		System.out.println("4. Select the next 25 days from \"Depart date\"");
+		System.out.println("5. Select \"Nha Trang\" for \"Depart from\" and \"Sài Gòn\" for \"Arrive at\".");
+		System.out.println("6. Select \"Soft seat with air conditioner\" for \"Seat type\"");
+		System.out.println("7. Select \"5\" for \"Ticket amount\"");
+		System.out.println("8. Click on \"Book ticket\" button");
+		//Message "Ticket booked successfully!" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)
 		
 	}
 }
