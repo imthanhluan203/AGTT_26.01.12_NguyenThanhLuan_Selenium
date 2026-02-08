@@ -8,18 +8,28 @@ public class Ticket {
 	private String arriveAt;
 	private String seatType;
 	private String ticketAmount;
+	private int duration;
 	
-	public Ticket(String departDate, String departFrom, String arriveAt, SeatType seatType, String ticketAmount) {
+	public Ticket(String departDate, String departFrom, String arriveAt, SeatType seatType, String ticketAmount,int duration) {
 		this.departDate = departDate;
 		this.departFrom = departFrom;
 		this.arriveAt = arriveAt;
 		this.seatType = seatType.getValue();
 		this.ticketAmount = ticketAmount;
+		this.duration = duration;
 	}
 	
-	public Ticket(String departFrom, String arriveAt, SeatType seatType, String ticketAmount) {
-		this("",departFrom,arriveAt,seatType,ticketAmount);
+	public Ticket(String departFrom, String arriveAt, SeatType seatType, String ticketAmount,int duration) {
+		this("",departFrom,arriveAt,seatType,ticketAmount,duration);
 	}
+	public int getDuration() {
+		return duration;
+	}
+
+	public void setDuration(int duration) {
+		this.duration = duration;
+	}
+
 	public String getDepartDate() {
 		return departDate;
 	}

@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestPackage.BookTicketTest" class="method navigator-link" hash-for-method="TC12">TC12</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestPackage.BookTicketTest" class="method navigator-link" hash-for-method="TC13">TC13</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,11 +126,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="TC12">
-                  </a> <!-- TC12 -->
-                  <span class="method-name">TC12</span>
+                  <a name="TC13">
+                  </a> <!-- TC13 -->
+                  <span class="method-name">TC13</span>
                   <em>
-(User can book 1 ticket at a time)                  </em>
+(User can book many tickets at a time)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -189,9 +189,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'TC12')
+data.setCell(0, 1, 'TC13')
 data.setCell(0, 2, 'TestPackage.BookTicketTest')
-data.setCell(0, 3, 8437);
+data.setCell(0, 3, 8122);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -211,9 +211,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestPackage.BookTicketTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">TC12</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -228,12 +235,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">TC12</span>
-                <span class="method-start">1784 ms</span>
+                <span class="method-name">TC13</span>
+                <span class="method-start">1584 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">10223 ms</span>
+                <span class="method-start">9710 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

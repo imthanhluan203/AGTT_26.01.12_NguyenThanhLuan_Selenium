@@ -51,12 +51,12 @@ public class Utilities {
 	}
 	
 	public static WebElement waitForElementLocated(By locator) {
-		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(60));
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
 	public static void waitForPageFullyLoad() {
-	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(30));
+	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 	    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
 	}
 	
@@ -81,4 +81,5 @@ public class Utilities {
 		LocalDate date = LocalDate.MIN.with(JulianFields.JULIAN_DAY, day);
 		return date.format(Constant.FORMATTER);
 	}
+	
 }
