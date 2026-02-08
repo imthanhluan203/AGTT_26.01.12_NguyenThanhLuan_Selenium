@@ -1,6 +1,8 @@
 package Common;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.temporal.JulianFields;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -52,6 +54,7 @@ public class Utilities {
 		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(60));
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
+	
 	public static void waitForPageFullyLoad() {
 	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(30));
 	    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
@@ -68,4 +71,14 @@ public class Utilities {
 	    Constant.WEBDRIVER.switchTo().window(mainTab);
 	}
 
+	public static long parseDateToJulian(String dmmyyyy) {
+		LocalDate date = LocalDate.parse(dmmyyyy, Constant.FORMATTER);
+		long julianDay = date.getLong(JulianFields.JULIAN_DAY);
+		return julianDay;
+	}
+	
+	public static String parseJulianToDate(long day) {
+		LocalDate date = LocalDate.MIN.with(JulianFields.JULIAN_DAY, day);
+		return date.format(Constant.FORMATTER);
+	}
 }

@@ -3,7 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
-import UserMail.UserInfo;
+import DataObjects.UserInfo;
 
 public class RegisterPage extends GeneralPage {
 	private final By _txtUsername = By.xpath("//input[@id='email']");

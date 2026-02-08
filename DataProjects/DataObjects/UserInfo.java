@@ -1,4 +1,4 @@
-package UserMail;
+package DataObjects;
 
 
 public class UserInfo {

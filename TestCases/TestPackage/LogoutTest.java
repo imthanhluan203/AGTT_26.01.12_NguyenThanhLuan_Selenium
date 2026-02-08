@@ -3,11 +3,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
 import Constant.Tab;
+import DataObjects.UserInfo;
 import Railway.FAQPage;
 import Railway.GeneralPage;
 import Railway.HomePage;
 import Railway.LoginPage;
-import UserMail.UserInfo;
 
 
 public class LogoutTest extends BaseTest {

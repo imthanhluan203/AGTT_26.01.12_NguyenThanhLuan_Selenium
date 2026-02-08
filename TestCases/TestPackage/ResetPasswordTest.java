@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.Constant;
 import Constant.Tab;
+import DataObjects.UserInfo;
 import Guerrillamail.GuerrillaMail;
 import Railway.HomePage;
 import Railway.LoginPage;
 import Railway.ResetAccountPage;
-import UserMail.UserInfo;
 
 public class ResetPasswordTest extends BaseTest {
 	@Test(description = "Reset password shows error if the new password is same as current", enabled = false)

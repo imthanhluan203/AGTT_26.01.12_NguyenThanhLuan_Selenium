@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-08T08:40:23 ICT" name="Suite" finished-at="2026-02-08T08:40:53 ICT" duration-ms="29773">
+  <suite started-at="2026-02-08T20:24:00 ICT" name="Suite" finished-at="2026-02-08T20:24:10 ICT" duration-ms="10263">
     <groups>
     </groups>
-    <test started-at="2026-02-08T08:40:23 ICT" name="Test" finished-at="2026-02-08T08:40:53 ICT" duration-ms="29773">
-      <class name="TestPackage.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.ResetPasswordTest@5e0e82ae]" started-at="2026-02-08T08:40:23 ICT" name="beforeMethod" finished-at="2026-02-08T08:40:25 ICT" duration-ms="1632" status="PASS">
+    <test started-at="2026-02-08T20:24:00 ICT" name="Test" finished-at="2026-02-08T20:24:10 ICT" duration-ms="10263">
+      <class name="TestPackage.BookTicketTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.BookTicketTest@30c15d8b]" started-at="2026-02-08T20:24:00 ICT" name="beforeMethod" finished-at="2026-02-08T20:24:02 ICT" duration-ms="1784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:TestPackage.ResetPasswordTest@5e0e82ae]" started-at="2026-02-08T08:40:25 ICT" name="TC11" description="Reset password shows error if the new password and confirm password doesn&#039;t match" finished-at="2026-02-08T08:40:53 ICT" duration-ms="28090" status="PASS">
+        <test-method signature="TC12()[pri:0, instance:TestPackage.BookTicketTest@30c15d8b]" started-at="2026-02-08T20:24:02 ICT" name="TC12" description="User can book 1 ticket at a time" finished-at="2026-02-08T20:24:10 ICT" duration-ms="8437" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.ResetPasswordTest@5e0e82ae]" started-at="2026-02-08T08:40:53 ICT" name="afterMethod" finished-at="2026-02-08T08:40:53 ICT" duration-ms="1" status="PASS">
+        </test-method> <!-- TC12 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@30c15d8b]" started-at="2026-02-08T20:24:10 ICT" name="afterMethod" finished-at="2026-02-08T20:24:10 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.ResetPasswordTest -->
+      </class> <!-- TestPackage.BookTicketTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

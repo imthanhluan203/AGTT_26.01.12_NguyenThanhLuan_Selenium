@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Common.Utilities;
 import Constant.Constant;
-import UserMail.UserInfo;
+import DataObjects.UserInfo;
 
 public class GuerrillaMail {
 	

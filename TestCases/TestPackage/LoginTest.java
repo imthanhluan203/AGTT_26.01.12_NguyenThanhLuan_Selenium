@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 import Constant.Constant;
 import Constant.Tab;
+import DataObjects.UserInfo;
 import Railway.HomePage;
 import Railway.LoginPage;
-import UserMail.UserInfo;
 
 public class LoginTest extends BaseTest{
 	

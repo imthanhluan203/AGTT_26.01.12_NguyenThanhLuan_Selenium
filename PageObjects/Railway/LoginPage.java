@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import Common.Utilities;
 import Constant.Tab;
-import UserMail.UserInfo;
+import DataObjects.UserInfo;
 
 public class LoginPage extends GeneralPage {
 	private final By _txtUsername = By.xpath("//input[@id='username']");

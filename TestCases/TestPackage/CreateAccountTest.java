@@ -6,10 +6,10 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.Constant;
 import Constant.Tab;
+import DataObjects.UserInfo;
 import Guerrillamail.GuerrillaMail;
 import Railway.HomePage;
 import Railway.RegisterPage;
-import UserMail.UserInfo;
 
 public class CreateAccountTest extends BaseTest{
 	
