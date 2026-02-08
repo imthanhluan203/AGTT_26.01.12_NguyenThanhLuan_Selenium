@@ -10,6 +10,8 @@ public class ResetAccountPage extends GeneralPage {
 	private final By _btnSubmitReset = By.xpath("//input[@value='Reset Password']");
 	private final By _txtMessageReset = By.xpath("//p[contains(@class,'message')]");
 	private final By _txtResetToken = By.xpath("//input[@id='resetToken']");
+	private final By _lblConfirmPassword = By.xpath("//li[@class='confirm-password']//label[@class='validation-error']");
+	
 	
 	public void enterPassword(String password) {
 		Utilities.enter(_txtNewPassword, password);
@@ -29,6 +31,10 @@ public class ResetAccountPage extends GeneralPage {
 	
 	public String getResetoken() {
 		return Utilities.getValueElement(_txtResetToken);
+	}
+	
+	public String getConfirmPasswordErr() {
+		return Utilities.getTextElement(_lblConfirmPassword);
 	}
 	
 }

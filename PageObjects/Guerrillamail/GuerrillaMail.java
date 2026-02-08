@@ -39,7 +39,6 @@ public class GuerrillaMail {
 			List<WebElement> listCheckBox = Constant.WEBDRIVER.findElements(_checkboxMail);
 			listCheckBox.forEach(x ->{
 				js.executeScript("arguments[0].click();", x);
-				System.out.println(x);
 			});
 			Utilities.click(_btnDelete);
 		} catch (Exception e) {
