@@ -18,6 +18,18 @@ public class BookTicketPage extends GeneralPage {
 	private final By _btnSubmit = By.xpath("//input[@type='submit']");
 	private final By _txtMessage = By.xpath("//h1");
 	private final By _tableBookedTicket = By.xpath("//table//tr//td");
+	private final By _txtDepartStation = By.xpath("//select[@name='DepartStation']/option[@selected]");
+	private final By _txtArriveStation = By.xpath("//select[@name='ArriveStation']/option[@selected]");
+	
+	
+	public String getDepartionText() {
+		return Utilities.getTextElement(_txtDepartStation);
+	}
+	
+	public String getArriveAtText() {
+		return Utilities.getTextElement(_txtArriveStation);
+	}
+	
 	
 	public void select(BookTicketFormField field, String value) {
 	    String xpath = String.format(_dynamicXpathFormField, field.getValue());
@@ -52,8 +64,10 @@ public class BookTicketPage extends GeneralPage {
 		if(field == BookTicketFormField.DEPART_DATE) {
 			String xpath = String.format(_dynamicXpathFormField, field.getValue());
 	        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
+	        System.out.println(yourDay);
 	        long julianDay = Utilities.parseDateToJulian(yourDay);
 			String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
+			System.out.println(afterSelect);
 			mySelect.selectByContainsVisibleText(afterSelect);
 			return afterSelect;
 		}
