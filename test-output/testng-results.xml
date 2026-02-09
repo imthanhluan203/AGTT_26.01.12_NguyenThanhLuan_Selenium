@@ -2,24 +2,24 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-09T05:48:01 ICT" name="Suite" finished-at="2026-02-09T05:48:08 ICT" duration-ms="7269">
+  <suite started-at="2026-02-09T11:28:41 ICT" name="Default suite" finished-at="2026-02-09T11:28:57 ICT" duration-ms="16412">
     <groups>
     </groups>
-    <test started-at="2026-02-09T05:48:01 ICT" name="Test" finished-at="2026-02-09T05:48:08 ICT" duration-ms="7269">
+    <test started-at="2026-02-09T11:28:41 ICT" name="Default test" finished-at="2026-02-09T11:28:57 ICT" duration-ms="16412">
       <class name="TestPackage.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T05:48:01 ICT" name="beforeMethod" finished-at="2026-02-09T05:48:02 ICT" duration-ms="1273" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T11:28:41 ICT" name="beforeMethod" finished-at="2026-02-09T11:28:49 ICT" duration-ms="8159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC14()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T05:48:02 ICT" name="TC14" description="User can check price of ticket from Timetable" finished-at="2026-02-09T05:48:08 ICT" duration-ms="5948" status="PASS">
+        <test-method signature="TC14()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T11:28:49 ICT" name="TC14" description="User can check price of ticket from Timetable" finished-at="2026-02-09T11:28:57 ICT" duration-ms="8159" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC14 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T05:48:08 ICT" name="afterMethod" finished-at="2026-02-09T05:48:08 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@6771beb3]" started-at="2026-02-09T11:28:57 ICT" name="afterMethod" finished-at="2026-02-09T11:28:57 ICT" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- TestPackage.BookTicketTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

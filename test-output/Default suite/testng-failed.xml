@@ -6,8 +6,8 @@
       <class name="TestPackage.BookTicketTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="TC14"/>
           <include name="afterMethod"/>
-          <include name="TC13"/>
         </methods>
       </class> <!-- TestPackage.BookTicketTest -->
     </classes>

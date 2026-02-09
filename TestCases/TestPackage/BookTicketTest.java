@@ -5,6 +5,7 @@ import java.util.Map;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.BookTicketFormField;
+import Constant.Constant;
 import Constant.Tab;
 import Constant.TimeTable;
 import Constant.SeatType;
@@ -13,6 +14,7 @@ import DataObjects.UserInfo;
 import Railway.BookTicketPage;
 import Railway.HomePage;
 import Railway.LoginPage;
+import Railway.TicketPricePage;
 import Railway.TimeTablePage;
 
 public class BookTicketTest extends BaseTest {
@@ -122,12 +124,31 @@ public class BookTicketTest extends BaseTest {
 		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on \"check price\" link of the route from \"Đà Nẵng\" to \"Sài Gòn\"");
-		timeTablePage.timeTableAction("Đà Nẵng","Sài Gòn",TimeTable.CHECK_PRICE);
+		TicketPricePage ticketPrice = timeTablePage.timeTableAction("Đà Nẵng","Sài Gòn",TimeTable.CHECK_PRICE);
+		String expectedPage = "Safe Railway - Ticket Price";
+		String actualPage = Constant.WEBDRIVER.getTitle();
 		
-		//"Ticket Price" page is loaded.
-		//Ticket table shows "Ticket price from Đà Nẵng to Sài Gòn".
-		//Price for each seat displays correctly
-		//HS = 310000, SS = 335000, SSC = 360000, HB = 410000, SB = 460000, SBC = 510000
+		String expectedTableName = "Ticket price from Đà Nẵng to Sài Gòn";
+		String actualTableName = ticketPrice.getTableName();
+		
+		String actualPriceHS = ticketPrice.getPrice(SeatType.HS);
+		String actualPriceSS = ticketPrice.getPrice(SeatType.SS);
+		String actualPriceSSC = ticketPrice.getPrice(SeatType.SSC);
+		String actualPriceHB = ticketPrice.getPrice(SeatType.HB);
+		String actualPriceSB = ticketPrice.getPrice(SeatType.SB);
+		String actualPriceSBC = ticketPrice.getPrice(SeatType.SBC);
+		
+		
 		System.out.println(verifyString);
+		
+		Assert.assertEquals(actualPage, expectedPage,verifyString);
+		Assert.assertEquals(expectedTableName, actualTableName,verifyString);
+		
+		Assert.assertEquals(actualPriceHS, "310000",verifyString);
+		Assert.assertEquals(actualPriceSS, "335000",verifyString);
+		Assert.assertEquals(actualPriceSSC, "360000",verifyString);
+		Assert.assertEquals(actualPriceHB, "410000",verifyString);
+		Assert.assertEquals(actualPriceSB, "460000",verifyString);
+		Assert.assertEquals(actualPriceSBC, "510000",verifyString);
 	}
 }
