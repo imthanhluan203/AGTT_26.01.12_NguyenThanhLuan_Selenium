@@ -1,8 +1,4 @@
 package Railway;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -17,9 +13,9 @@ public class BookTicketPage extends GeneralPage {
 	private final String _dynamicXpathFormField = "//select[@name='%s']";
 	private final By _btnSubmit = By.xpath("//input[@type='submit']");
 	private final By _txtMessage = By.xpath("//h1");
-	private final By _tableBookedTicket = By.xpath("//table//tr//td");
 	private final By _txtDepartStation = By.xpath("//select[@name='DepartStation']/option[@selected]");
 	private final By _txtArriveStation = By.xpath("//select[@name='ArriveStation']/option[@selected]");
+	private final String _dynamicXpathBookTicketPage = "(//tr[th[text()='%s']]//following-sibling::tr//td)[count(//tr//th[text()='%s']//preceding-sibling::th) + 1]";
 	
 	
 	public String getDepartionText() {
@@ -33,14 +29,6 @@ public class BookTicketPage extends GeneralPage {
 	
 	public void select(BookTicketFormField field, String value) {
 	    String xpath = String.format(_dynamicXpathFormField, field.getValue());
-	    if (field == BookTicketFormField.ARRIVE_AT) {
-	    	try {
-				Thread.sleep(1500);
-			} catch (InterruptedException e) {
-
-				e.printStackTrace();
-			}
-	    }
 	    new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)))
 	        .selectByVisibleText(value);
 	}
@@ -91,35 +79,23 @@ public class BookTicketPage extends GeneralPage {
 		}else {
 			departDate = this.select(BookTicketFormField.DEPART_DATE, myTicket.getDuration());
 		}
+		String xpath = String.format("//select[@name='%s']",BookTicketFormField.ARRIVE_AT.getValue());
+		
+		WebElement element = Constant.WEBDRIVER.findElement(By.xpath(xpath));
+		
 		this.select(BookTicketFormField.DEPART_FROM, myTicket.getDepartFrom());
+		
+		Utilities.waitForNewState(element);
+		
 		this.select(BookTicketFormField.ARRIVE_AT, myTicket.getArriveAt());
 		this.select(BookTicketFormField.SEAT_TYPE, myTicket.getSeatType());
 		this.select(BookTicketFormField.TICKET_AMOUNT, myTicket.getTicketAmount());
 		return departDate;
 	}
 	
-	public Map<BookTicketFormField,String> getTicketInformation() {
-		String[] header = new String[] {"Depart Station",	"Arrive Station",	"Seat Type",	"Depart Date",	"Book Date",	"Expired Date",	"Amount",	"Total Price"};
-		Map<BookTicketFormField,String> bookedTicketData = new HashMap<BookTicketFormField, String>();
-		
-		List<WebElement> listElements = Constant.WEBDRIVER.findElements(_tableBookedTicket);
-		for(int i=0; i<listElements.size(); i++) {
-			if(header[i].equals("Depart Station")) {
-				bookedTicketData.put(BookTicketFormField.DEPART_FROM, listElements.get(i).getText());
-			}
-			if(header[i].equals("Arrive Station")) {
-				bookedTicketData.put(BookTicketFormField.ARRIVE_AT, listElements.get(i).getText());
-			}
-			if(header[i].equals("Seat Type")) {
-				bookedTicketData.put(BookTicketFormField.SEAT_TYPE, listElements.get(i).getText());
-			}
-			if(header[i].equals("Depart Date")) {
-				bookedTicketData.put(BookTicketFormField.DEPART_DATE, listElements.get(i).getText());
-			}
-			if(header[i].equals("Amount")) {
-				bookedTicketData.put(BookTicketFormField.TICKET_AMOUNT, listElements.get(i).getText());
-			}
-		}
-		return bookedTicketData;
+	public String getTextFieldBookedTicket(String field) {
+		String myXpath = String.format(_dynamicXpathBookTicketPage, field,field);
+		return Utilities.getTextElement(By.xpath(myXpath));
 	}
+	
 }

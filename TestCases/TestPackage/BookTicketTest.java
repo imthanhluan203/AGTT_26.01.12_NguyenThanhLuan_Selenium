@@ -1,11 +1,9 @@
 package TestPackage;
 
 import java.time.LocalDate;
-import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import Constant.BookTicketFormField;
 import Constant.Constant;
 import Constant.Tab;
 import Constant.TimeTable;
@@ -25,7 +23,7 @@ public class BookTicketTest extends BaseTest {
 		
 		
 		System.out.println("Pre-condition: an actived account is existing.");
-		myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		myUserInfo = new UserInfo(Constant.USERNAME, Constant.PASSWORD);
 		int duration = 2;
 		Ticket myTicket = new Ticket("Nha Trang", "Huế", SeatType.SBC, "1",duration);
 	
@@ -49,25 +47,28 @@ public class BookTicketTest extends BaseTest {
 		
 		System.out.println("8. Click on \"Book ticket\" button");
 		bookTicketPage.submit();
-		
-		//Message "Ticket booked successfully!" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)
 		String verifyString = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		System.out.println(verifyString);
 		String actualResult = bookTicketPage.getBookTicketMessage();
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		
 		Assert.assertEquals(actualResult, expectedResult,verifyString);
-		Map<BookTicketFormField, String> actualResults = bookTicketPage.getTicketInformation();
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_DATE), departDate);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_FROM), myTicket.getDepartFrom(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.ARRIVE_AT), myTicket.getArriveAt(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.SEAT_TYPE), myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.TICKET_AMOUNT), myTicket.getTicketAmount(),verifyString);		
+		Assert.assertEquals(actualDepartDate, departDate, verifyString);
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString);
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString);
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString);
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);		
 	}
 	
 	@Test(description = "User can book many tickets at a time", enabled = false)
 	public void TC13() {
 		String expectedResult = "Ticket booked successfully!";
 		System.out.println("Pre-condition: an actived account is existing");
-		myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		myUserInfo = new UserInfo(Constant.USERNAME, Constant.PASSWORD);
 		Ticket myTicket = new Ticket("Nha Trang", "Sài Gòn", SeatType.SBC, "5",10);
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -93,13 +94,18 @@ public class BookTicketTest extends BaseTest {
 		String verifyString = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		System.out.println(verifyString);
 		String actualResult = bookTicketPage.getBookTicketMessage();
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		
 		Assert.assertEquals(actualResult, expectedResult,verifyString);
-		Map<BookTicketFormField, String> actualResults = bookTicketPage.getTicketInformation();
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_DATE), departDate);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_FROM), myTicket.getDepartFrom(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.ARRIVE_AT), myTicket.getArriveAt(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.SEAT_TYPE), myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.TICKET_AMOUNT), myTicket.getTicketAmount(),verifyString);		
+		Assert.assertEquals(actualDepartDate, departDate, verifyString);
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString);
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString);
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString);
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);		
 		
 	}
 	
@@ -144,7 +150,6 @@ public class BookTicketTest extends BaseTest {
 		
 		Assert.assertEquals(actualPage, expectedPage,verifyString);
 		Assert.assertEquals(expectedTableName, actualTableName,verifyString);
-		
 		Assert.assertEquals(actualPriceHS, "310000",verifyString);
 		Assert.assertEquals(actualPriceSS, "335000",verifyString);
 		Assert.assertEquals(actualPriceSSC, "360000",verifyString);
@@ -156,7 +161,7 @@ public class BookTicketTest extends BaseTest {
 	@Test(description = "User can book ticket from Timetable", enabled = true)
 	public void TC15() {
 		System.out.println("Pre-condition: an actived account is existing");
-		myUserInfo = new UserInfo("imthanhluan203@gmail.com", "123456789");
+		myUserInfo = new UserInfo("lonxskqi@sharklasers.com", "987654321");
 		Ticket myTicket = new Ticket("Quảng Ngãi", "Huế", SeatType.HS, "5",1);
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -182,19 +187,24 @@ public class BookTicketTest extends BaseTest {
 				
 		System.out.println("5. Select Depart date = tomorrow");
 		System.out.println("6. Select Ticket amount = 5");
-		String departDate = bookTicketPage.bookTicket(myTicket, LocalDate.now().format(Constant.FORMATTER));
+		String departDate = bookTicketPage.bookTicket(myTicket, LocalDate.now().plusDays(5).format(Constant.FORMATTER));
 		
 		System.out.println("7. Click on \"Book ticket\" button");
 		bookTicketPage.submit();
-		String verifyString2 = "Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
-		String actualResult = bookTicketPage.getBookTicketMessage();
+		String verifyString2 = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		String expectedResult = "Ticket booked successfully!";
+		String actualResult = bookTicketPage.getBookTicketMessage();
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		
 		Assert.assertEquals(actualResult, expectedResult,verifyString2);
-		Map<BookTicketFormField, String> actualResults = bookTicketPage.getTicketInformation();
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_DATE), departDate);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.DEPART_FROM), myTicket.getDepartFrom(),verifyString2);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.ARRIVE_AT), myTicket.getArriveAt(),verifyString2);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.SEAT_TYPE), myTicket.getSeatType(),verifyString2);
-		Assert.assertEquals(actualResults.get(BookTicketFormField.TICKET_AMOUNT), myTicket.getTicketAmount(),verifyString2);
+		Assert.assertEquals(actualDepartDate, departDate, verifyString2);
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString2);
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString2);
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString2);
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString2);		
 	}
 }

@@ -1,36 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-09T14:45:13 ICT" name="Default suite" finished-at="2026-02-09T14:45:29 ICT" duration-ms="16543">
+  <suite started-at="2026-02-10T06:03:53 ICT" name="Default suite" finished-at="2026-02-10T06:04:06 ICT" duration-ms="13532">
     <groups>
     </groups>
-    <test started-at="2026-02-09T14:45:13 ICT" name="Default test" finished-at="2026-02-09T14:45:29 ICT" duration-ms="16543">
-      <class name="TestPackage.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.BookTicketTest@51399530]" started-at="2026-02-09T14:45:13 ICT" name="beforeMethod" finished-at="2026-02-09T14:45:15 ICT" duration-ms="2396" status="PASS">
+    <test started-at="2026-02-10T06:03:53 ICT" name="Default test" finished-at="2026-02-10T06:04:06 ICT" duration-ms="13532">
+      <class name="TestPackage.CancelBookingTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:TestPackage.CancelBookingTest@30c15d8b]" started-at="2026-02-10T06:03:53 ICT" name="beforeMethod" finished-at="2026-02-10T06:03:56 ICT" duration-ms="2780" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC15()[pri:0, instance:TestPackage.BookTicketTest@51399530]" started-at="2026-02-09T14:45:15 ICT" name="TC15" description="User can book ticket from Timetable" finished-at="2026-02-09T14:45:29 ICT" duration-ms="14034" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="TC16()[pri:0, instance:TestPackage.CancelBookingTest@30c15d8b]" started-at="2026-02-10T06:03:56 ICT" name="TC16" description="Cancel booking" finished-at="2026-02-10T06:04:06 ICT" duration-ms="10634" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Cannot locate option with text: 2/10/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: driver.version: unknown]]>
+              <![CDATA[The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/10/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
-at org.openqa.selenium.support.ui.Select.selectByContainsVisibleText(Select.java:151)
-at Railway.BookTicketPage.select(BookTicketPage.java:71)
-at Railway.BookTicketPage.bookTicket(BookTicketPage.java:90)
-at TestPackage.BookTicketTest.TC15(BookTicketTest.java:185)
+              <![CDATA[java.lang.AssertionError: The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failEquals(Assert.java:1594)
+at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+at org.testng.Assert.assertNotEquals(Assert.java:2217)
+at TestPackage.CancelBookingTest.TC16(CancelBookingTest.java:56)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -59,15 +51,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC15 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@51399530]" started-at="2026-02-09T14:45:29 ICT" name="afterMethod" finished-at="2026-02-09T14:45:29 ICT" duration-ms="2" status="PASS">
+        </test-method> <!-- TC16 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CancelBookingTest@30c15d8b]" started-at="2026-02-10T06:04:06 ICT" name="afterMethod" finished-at="2026-02-10T06:04:06 ICT" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.BookTicketTest -->
+      </class> <!-- TestPackage.CancelBookingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

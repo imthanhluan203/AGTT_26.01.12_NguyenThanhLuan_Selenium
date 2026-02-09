@@ -59,6 +59,14 @@ public class Utilities {
 	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
 	    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
 	}
+	public static void waitForNewState(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(3));
+			wait.until(ExpectedConditions.stalenessOf(element));
+		} catch (Exception e) {
+			return;
+		}
+	}
 	
 	public static void closeAllTabsExceptMain(String tabtitle) {
 	    for (String handle : Constant.WEBDRIVER.getWindowHandles()) {

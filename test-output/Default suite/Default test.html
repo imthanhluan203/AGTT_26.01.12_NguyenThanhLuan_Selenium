@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Feb 09 14:45:13 ICT 2026</td>
+<td>Started on:</td><td>Tue Feb 10 06:03:53 ICT 2026</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16543 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13532 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,17 +76,13 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TestPackage.BookTicketTest.TC15()'><b>TC15</b><br>Test class: TestPackage.BookTicketTest<br>Test method: User can book ticket from Timetable</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/10/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
-	at org.openqa.selenium.support.ui.Select.selectByContainsVisibleText(Select.java:151)
-	at Railway.BookTicketPage.select(BookTicketPage.java:71)
-	at Railway.BookTicketPage.bookTicket(BookTicketPage.java:90)
-	at TestPackage.BookTicketTest.TC15(BookTicketTest.java:185)
+<td title='TestPackage.CancelBookingTest.TC16()'><b>TC16</b><br>Test class: TestPackage.CancelBookingTest<br>Test method: Cancel booking</td>
+<td><div><pre>java.lang.AssertionError: The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failEquals(Assert.java:1594)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+	at org.testng.Assert.assertNotEquals(Assert.java:2217)
+	at TestPackage.CancelBookingTest.TC16(CancelBookingTest.java:56)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -113,17 +109,13 @@ Driver info: driver.version: unknown
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace509559152", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace509559152'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/10/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: &apos;4.40.0&apos;, revision: &apos;b3333f1&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
-	at org.openqa.selenium.support.ui.Select.selectByContainsVisibleText(Select.java:151)
-	at Railway.BookTicketPage.select(BookTicketPage.java:71)
-	at Railway.BookTicketPage.bookTicket(BookTicketPage.java:90)
-	at TestPackage.BookTicketTest.TC15(BookTicketTest.java:185)
+</pre></div><a href='#' onClick='toggleBox("stack-trace102103410", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace102103410'><pre>java.lang.AssertionError: The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failEquals(Assert.java:1594)
+	at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
+	at org.testng.Assert.assertNotEquals(Assert.java:2217)
+	at TestPackage.CancelBookingTest.TC16(CancelBookingTest.java:56)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -151,8 +143,8 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>14</td>
-<td>TestPackage.BookTicketTest@51399530</td></tr>
+<td>10</td>
+<td>TestPackage.CancelBookingTest@30c15d8b</td></tr>
 </table><p>
 </body>
 </html>
