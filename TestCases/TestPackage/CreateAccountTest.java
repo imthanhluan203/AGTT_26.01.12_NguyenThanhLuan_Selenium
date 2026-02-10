@@ -13,7 +13,7 @@ import Railway.RegisterPage;
 
 public class CreateAccountTest extends BaseTest{
 	
-	@Test(description = "User can't create account with an already in-use email", enabled = false)
+	@Test(description = "User can't create account with an already in-use email", enabled = true)
 	public void TC7() {
 		
 		myUserInfo = new UserInfo(Constant.USERNAME, "0987654321");
@@ -45,7 +45,7 @@ public class CreateAccountTest extends BaseTest{
 		
 	}
 	
-	@Test(description = "User can't create account while password and PID fields are empty", enabled = false)
+	@Test(description = "User can't create account while password and PID fields are empty", enabled = true)
 	public void TC8() {
 		String expectedErrorMessage = "There're errors in the form. Please correct the errors and try again.";
 		String expectedResultPassword = "Invalid password length";

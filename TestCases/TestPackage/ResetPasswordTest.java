@@ -13,7 +13,7 @@ import Railway.LoginPage;
 import Railway.ResetAccountPage;
 
 public class ResetPasswordTest extends BaseTest {
-	@Test(description = "Reset password shows error if the new password is same as current", enabled = false)
+	@Test(description = "Reset password shows error if the new password is same as current", enabled = true)
 	public void TC10() {
 		
 		String expectedResult = "The new password cannot be the same with the current password";

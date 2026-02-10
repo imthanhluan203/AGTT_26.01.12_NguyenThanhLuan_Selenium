@@ -29,7 +29,6 @@ public class LoginTest extends BaseTest{
 		
 		System.out.println("3. Enter valid Email and Password.");
 		HomePage myPage = loginPage.login(myUserInfo);
-		// ko lay webelement ra, in ra verify step
 		String actualResult = myPage.getWelcomeMessage();
 		
 		String verifyString = "VP: User is logged into Railway. Welcome user message is displayed";
@@ -41,7 +40,7 @@ public class LoginTest extends BaseTest{
 	
 	
 	
-	@Test(description = "User cannot login with blank \"Username\" textbox",enabled = false)
+	@Test(description = "User cannot login with blank \"Username\" textbox",enabled = true)
 	public void TC2() {
 		//Create user information with bank username 
 		
@@ -72,7 +71,7 @@ public class LoginTest extends BaseTest{
 		Assert.assertEquals(actualResult, expectedResult, verifyString);		
 	}
 	
-	@Test(description = "User cannot log into Railway with invalid password.", enabled = false)
+	@Test(description = "User cannot log into Railway with invalid password.", enabled = true)
 	public void TC3() {
 		//Create user information with bank username 
 		myUserInfo = new UserInfo(Constant.USERNAME,"x" + Constant.PASSWORD);
@@ -100,7 +99,7 @@ public class LoginTest extends BaseTest{
 	}
 	
 	
-	@Test(description = "System shows message when user enters wrong password many times",enabled = false)
+	@Test(description = "System shows message when user enters wrong password many times",enabled = true)
 	public void TC4() {
 		//Create user information with bank username 
 		myUserInfo = new UserInfo(Constant.USERNAME,"x" + Constant.PASSWORD);

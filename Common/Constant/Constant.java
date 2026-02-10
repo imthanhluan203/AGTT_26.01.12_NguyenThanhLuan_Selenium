@@ -11,8 +11,8 @@ public class Constant {
 	public static final String MAIL_TYPE =	"@sharklasers.com";
 	public static final String EMAIL_URL = "https://www.guerrillamail.com/inbox";
 	public static final String RAILWAY_URL = "http://saferailway.somee.com/Page/HomePage.cshtml";
-	public static final String USERNAME = "imthanhluan203@gmail.com";
+	public static final String USERNAME = "irrlbgzb@sharklasers.com";
 	public static final String PASSWORD = "123456789";
-	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("M/dd/yyyy");
+	public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("M/d/yyyy");
 	public static final String TODAY = LocalDate.now().format(FORMATTER);
 }

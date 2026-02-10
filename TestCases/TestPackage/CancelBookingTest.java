@@ -3,6 +3,7 @@ package TestPackage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Constant.City;
 import Constant.SeatType;
 import Constant.Tab;
 import DataObjects.Ticket;
@@ -17,7 +18,7 @@ public class CancelBookingTest extends BaseTest {
 	public void TC16() {
 		System.out.println("Pre-condition: an actived account is existing");
 		myUserInfo = new UserInfo("lonxskqi@sharklasers.com", "987654321");
-		Ticket myTicket = new Ticket("Quảng Ngãi", "Huế", SeatType.HS, "1",1);
+		Ticket myTicket = new Ticket(City.QUANGNGAI, City.HUE, SeatType.HS, "1",1);
 		
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage homePage = new HomePage();

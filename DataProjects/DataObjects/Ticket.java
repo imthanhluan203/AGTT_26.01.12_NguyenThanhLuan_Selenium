@@ -1,5 +1,6 @@
 package DataObjects;
 
+import Constant.City;
 import Constant.SeatType;
 
 public class Ticket {
@@ -10,16 +11,16 @@ public class Ticket {
 	private String ticketAmount;
 	private int duration;
 	
-	public Ticket(String departDate, String departFrom, String arriveAt, SeatType seatType, String ticketAmount,int duration) {
+	public Ticket(String departDate, City departFrom, City arriveAt, SeatType seatType, String ticketAmount,int duration) {
 		this.departDate = departDate;
-		this.departFrom = departFrom;
-		this.arriveAt = arriveAt;
+		this.departFrom = departFrom.getValue();
+		this.arriveAt = arriveAt.getValue();
 		this.seatType = seatType.getValue();
 		this.ticketAmount = ticketAmount;
 		this.duration = duration;
 	}
 	
-	public Ticket(String departFrom, String arriveAt, SeatType seatType, String ticketAmount,int duration) {
+	public Ticket(City departFrom, City arriveAt, SeatType seatType, String ticketAmount,int duration) {
 		this("",departFrom,arriveAt,seatType,ticketAmount,duration);
 	}
 	public int getDuration() {
