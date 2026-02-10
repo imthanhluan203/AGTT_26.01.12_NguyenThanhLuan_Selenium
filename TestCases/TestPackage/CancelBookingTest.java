@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import Constant.City;
 import Constant.SeatType;
 import Constant.Tab;
+import Constant.TableHeader;
 import DataObjects.Ticket;
 import DataObjects.UserInfo;
 import Railway.BookTicketPage;
@@ -37,22 +38,22 @@ public class CancelBookingTest extends BaseTest {
 		TicketPage ticketPage = bookTicketPage.gotoPage(Tab.MYTICKET, TicketPage.class);
 		String noOfTicKetDelete = "1";
 		
-		String beforeCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, "Depart Station");
-		String beforeCancelDepartDate = ticketPage.getCellValue(noOfTicKetDelete, "Depart Date");
-		String beforeCancelArriveStation = ticketPage.getCellValue(noOfTicKetDelete, "Arrive Station");
-		String beforeCancelSeatType = ticketPage.getCellValue(noOfTicKetDelete, "Seat Type");
-		String beforeCancelAmount = ticketPage.getCellValue(noOfTicKetDelete, "Amount"); 
+		String beforeCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_STATION);
+		String beforeCancelDepartDate = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_DATE);
+		String beforeCancelArriveStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.ARRIVE_STATION);
+		String beforeCancelSeatType = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.SEAT_TYPE);
+		String beforeCancelAmount = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.AMOUNT); 
 		
 		System.out.println("5. Click on \"Cancel\" button of ticket which user want to cancel.");
 		ticketPage.clickCancelButton(noOfTicKetDelete);
 		System.out.println("6. Click on \"OK\" button on Confirmation message \"Are you sure?\"");
 		ticketPage.clickOke();
 		String verifyString = "The canceled ticket is disappeared";
-		String afterCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, "Depart Station");
-		String afterCancelDepartDate = ticketPage.getCellValue(noOfTicKetDelete, "Depart Date");
-		String afterCancelArriveStation = ticketPage.getCellValue(noOfTicKetDelete, "Arrive Station");
-		String afterCancelSeatType = ticketPage.getCellValue(noOfTicKetDelete, "Seat Type");
-		String afterCancelAmount = ticketPage.getCellValue(noOfTicKetDelete, "Amount"); 
+		String afterCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_STATION);
+		String afterCancelDepartDate = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_DATE);
+		String afterCancelArriveStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.ARRIVE_STATION);
+		String afterCancelSeatType = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.SEAT_TYPE);
+		String afterCancelAmount = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.AMOUNT); 
 		
 		Assert.assertNotEquals(beforeCancelDepartStation, afterCancelDepartStation, verifyString);
 		Assert.assertNotEquals(beforeCancelDepartDate, afterCancelDepartDate, verifyString);

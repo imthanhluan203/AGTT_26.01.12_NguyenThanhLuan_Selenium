@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import Common.Utilities;
 import Constant.BookTicketFormField;
 import Constant.Constant;
+import Constant.TableHeader;
 import DataObjects.Ticket;
 
 public class BookTicketPage extends GeneralPage {
@@ -93,8 +94,8 @@ public class BookTicketPage extends GeneralPage {
 		return departDate;
 	}
 	
-	public String getTextFieldBookedTicket(String field) {
-		String myXpath = String.format(_dynamicXpathBookTicketPage, field,field);
+	public String getTextFieldBookedTicket(TableHeader field) {
+		String myXpath = String.format(_dynamicXpathBookTicketPage, field.getValue(),field.getValue());
 		return Utilities.getTextElement(By.xpath(myXpath));
 	}
 	

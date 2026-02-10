@@ -21,18 +21,16 @@ import Railway.TimeTablePage;
 
 public class BookTicketTest extends BaseTest {
 	
-	@Test(description = "User can book 1 ticket at a time",enabled = false)
+	@Test(description = "User can book 1 ticket at a time",enabled = true)
 	public void TC12() {
 		
 		String expectedResult = "Ticket booked successfully!";
-		
+		int duration = 2;
 		
 		System.out.println("Pre-condition: an actived account is existing.");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
 		register(myUserInfo);
-		int duration = 2;
 		Ticket myTicket = new Ticket(City.NHATRANG, City.HUE, SeatType.SBC, "1",duration);
-	
 		
 		System.out.println("1. Navigate to QA Railway Website.");
 		HomePage homePage = new HomePage();
@@ -53,14 +51,15 @@ public class BookTicketTest extends BaseTest {
 		
 		System.out.println("8. Click on \"Book ticket\" button");
 		bookTicketPage.submit();
+		//Tách verify r
 		String verifyString = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		System.out.println(verifyString);
 		String actualResult = bookTicketPage.getBookTicketMessage();
-		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
-		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
-		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
-		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
-		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_STATION);
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_DATE);
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.ARRIVE_STATION);
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
 		Assert.assertEquals(actualResult, expectedResult,verifyString);
 		Assert.assertEquals(actualDepartDate, departDate, verifyString);
@@ -70,7 +69,7 @@ public class BookTicketTest extends BaseTest {
 		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);		
 	}
 	
-	@Test(description = "User can book many tickets at a time", enabled = false)
+	@Test(description = "User can book many tickets at a time", enabled = true)
 	public void TC13() {
 		String expectedResult = "Ticket booked successfully!";
 		System.out.println("Pre-condition: an actived account is existing");
@@ -101,22 +100,21 @@ public class BookTicketTest extends BaseTest {
 		String verifyString = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		System.out.println(verifyString);
 		String actualResult = bookTicketPage.getBookTicketMessage();
-		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
-		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
-		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
-		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
-		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_STATION);
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_DATE);
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.ARRIVE_STATION);
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
 		Assert.assertEquals(actualResult, expectedResult,verifyString);
 		Assert.assertEquals(actualDepartDate, departDate, verifyString);
 		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString);
 		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString);
 		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);		
-		
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);				
 	}
 	
-	@Test(description = "User can check price of ticket from Timetable",enabled = false)
+	@Test(description = "User can check price of ticket from Timetable",enabled = true)
 	public void TC14() {
 		System.out.println("Pre-condition: an actived account is existing");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
@@ -139,7 +137,7 @@ public class BookTicketTest extends BaseTest {
 		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on \"check price\" link of the route from \"Đà Nẵng\" to \"Sài Gòn\"");
-		TicketPricePage ticketPrice = timeTablePage.timeTableAction("Đà Nẵng","Sài Gòn",TableHeader.CHECKPRICE);
+		TicketPricePage ticketPrice = timeTablePage.timeTableAction(City.DANANG,City.SAIGON,TableHeader.CHECK_PRICE);
 		String expectedPage = "Safe Railway - Ticket Price";
 		String actualPage = Constant.WEBDRIVER.getTitle();
 		
@@ -168,7 +166,7 @@ public class BookTicketTest extends BaseTest {
 		
 	}
 	
-	@Test(description = "User can book ticket from Timetable", enabled = false)
+	@Test(description = "User can book ticket from Timetable", enabled = true)
 	public void TC15() {
 		System.out.println("Pre-condition: an actived account is existing");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
@@ -187,7 +185,7 @@ public class BookTicketTest extends BaseTest {
 		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
-		BookTicketPage bookTicketPage = timeTablePage.timeTableAction("Quảng Ngãi", "Huế", TableHeader.BOOKTICKET);
+		BookTicketPage bookTicketPage = timeTablePage.timeTableAction(City.QUANGNGAI, City.HUE, TableHeader.BOOK_TICKET);
 		//Book ticket form is shown with the corrected "depart from" and "Arrive at"
 		String verifyString1 = "VP: Book ticket form is shown with the corrected \"depart from\" and \"Arrive at\"";
 		String departFrom = bookTicketPage.getDepartionText();
@@ -205,11 +203,11 @@ public class BookTicketTest extends BaseTest {
 		String verifyString2 = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		String expectedResult = "Ticket booked successfully!";
 		String actualResult = bookTicketPage.getBookTicketMessage();
-		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket("Depart Station");
-		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket("Depart Date");
-		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket("Arrive Station");
-		String actualSeatType = bookTicketPage.getTextFieldBookedTicket("Seat Type");
-		String actualAmount = bookTicketPage.getTextFieldBookedTicket("Amount");
+		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_STATION);
+		String actualDepartDate = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_DATE);
+		String actualArriveStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.ARRIVE_STATION);
+		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
+		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
 		Assert.assertEquals(actualResult, expectedResult,verifyString2);
 		Assert.assertEquals(actualDepartDate, departDate, verifyString2);
