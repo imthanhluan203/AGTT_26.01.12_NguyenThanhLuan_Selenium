@@ -12,7 +12,7 @@ import Railway.LoginPage;
 public class LoginTest extends BaseTest{
 	
 	
-	@Test(description = "TC1: User can log into Railway with valid username and password",enabled = false)
+	@Test(description = "TC1: User can log into Railway with valid username and password",enabled = true)
 	public void TC1() {
 		
 		//Create valid user information

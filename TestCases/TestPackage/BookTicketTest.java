@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
 import Constant.Tab;
-import Constant.TimeTable;
+import Constant.TableHeader;
 import Constant.SeatType;
 import DataObjects.Ticket;
 import DataObjects.UserInfo;
@@ -109,7 +109,7 @@ public class BookTicketTest extends BaseTest {
 		
 	}
 	
-	@Test(description = "User can check price of ticket from Timetable",enabled = false)
+	@Test(description = "User can check price of ticket from Timetable",enabled = true)
 	public void TC14() {
 		System.out.println("Pre-condition: an actived account is existing");
 		myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
@@ -131,7 +131,7 @@ public class BookTicketTest extends BaseTest {
 		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on \"check price\" link of the route from \"Đà Nẵng\" to \"Sài Gòn\"");
-		TicketPricePage ticketPrice = timeTablePage.timeTableAction("Đà Nẵng","Sài Gòn",TimeTable.CHECK_PRICE);
+		TicketPricePage ticketPrice = timeTablePage.timeTableAction("Đà Nẵng","Sài Gòn",TableHeader.CHECKPRICE);
 		String expectedPage = "Safe Railway - Ticket Price";
 		String actualPage = Constant.WEBDRIVER.getTitle();
 		
@@ -156,9 +156,11 @@ public class BookTicketTest extends BaseTest {
 		Assert.assertEquals(actualPriceHB, "410000",verifyString);
 		Assert.assertEquals(actualPriceSB, "460000",verifyString);
 		Assert.assertEquals(actualPriceSBC, "510000",verifyString);
+		
+		
 	}
 	
-	@Test(description = "User can book ticket from Timetable", enabled = true)
+	@Test(description = "User can book ticket from Timetable", enabled = false)
 	public void TC15() {
 		System.out.println("Pre-condition: an actived account is existing");
 		myUserInfo = new UserInfo("lonxskqi@sharklasers.com", "987654321");
@@ -176,7 +178,7 @@ public class BookTicketTest extends BaseTest {
 		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
-		BookTicketPage bookTicketPage = timeTablePage.timeTableAction("Quảng Ngãi", "Huế", TimeTable.BOOK_TICKET);
+		BookTicketPage bookTicketPage = timeTablePage.timeTableAction("Quảng Ngãi", "Huế", TableHeader.BOOKTICKET);
 		//Book ticket form is shown with the corrected "depart from" and "Arrive at"
 		String verifyString1 = "VP: Book ticket form is shown with the corrected \"depart from\" and \"Arrive at\"";
 		String departFrom = bookTicketPage.getDepartionText();

@@ -1,16 +1,28 @@
 package Railway;
 import org.openqa.selenium.By;
 import Common.Utilities;
-import Constant.TimeTable;
+import Constant.Constant;
+import Constant.TableHeader;
 
 public class TimeTablePage extends GeneralPage{
-	private final String _linkCellInTable = "//table//td[text()='%s']//following-sibling::td[text()='%s']//following-sibling::td//a[text()='%s']";
+	private final String dynamicXpathTableCell = "((//table//tbody//tr)[%d]//td)[count(//table//thead//tr//th[text()= '%s']//preceding-sibling::th) + 1]";
 	
 	@SuppressWarnings("unchecked")
-	public <T extends GeneralPage> T timeTableAction(String from,String to,TimeTable action) {
-		String xpath = String.format(_linkCellInTable, from,to,action.getValue());
+	public <T extends GeneralPage> T timeTableAction(String from,String to,TableHeader header) {
+		int numTimeTableRows = Constant.WEBDRIVER.findElements(By.xpath("//table//tbody//tr")).size();
+		int indexNumber = -1;
+		for(int i=1; i<=numTimeTableRows; i++) {
+			String depart = Utilities.getTextElement(By.xpath(String.format(dynamicXpathTableCell, i, "Depart Station")));
+			String arrive  = Utilities.getTextElement(By.xpath(String.format(dynamicXpathTableCell, i, "Arrive Station")));
+			if(depart.equals(from) && arrive.equals(to)) {
+				indexNumber = i;
+				break;
+			}
+		}
+		String xpathCheckPrice = dynamicXpathTableCell + "//a";
+		String xpath = String.format(xpathCheckPrice,indexNumber, header.getValue());
 		Utilities.click(By.xpath(xpath));
-		if(action == TimeTable.CHECK_PRICE) {
+		if(header == TableHeader.CHECKPRICE) {
 			return (T) new TicketPricePage();
 		}
 		return (T) new BookTicketPage();
