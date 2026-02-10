@@ -2,12 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Railway Exercise(failed)">
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="x"/>
     <classes>
       <class name="TestPackage.BookTicketTest">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="TC12"/>
           <include name="TC15"/>
+          <include name="beforeMethod"/>
           <include name="TC14"/>
           <include name="afterMethod"/>
           <include name="TC13"/>

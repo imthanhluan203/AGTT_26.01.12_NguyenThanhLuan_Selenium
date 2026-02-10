@@ -1,8 +1,10 @@
 package TestPackage;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import Common.Utilities;
 import Constant.Constant;
@@ -16,10 +18,19 @@ public abstract class BaseTest {
 	
 	protected UserInfo myUserInfo;
 	
+	
+	@Parameters({"browser"})
 	@BeforeMethod
-	public void beforeMethod() throws Exception {
+	public void beforeMethod(String myBrowser) {
 		System.out.println("Pre-condition");
-		Constant.WEBDRIVER = new ChromeDriver();
+		if(myBrowser.equals("chrome")) {
+			System.out.println(myBrowser);
+			Constant.WEBDRIVER = new ChromeDriver();
+		}else {
+			System.out.println(myBrowser);
+			Constant.WEBDRIVER = new FirefoxDriver();
+		}
+		
 	}
 	@AfterMethod
 	public void afterMethod() {

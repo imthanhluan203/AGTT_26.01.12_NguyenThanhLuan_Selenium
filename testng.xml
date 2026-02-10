@@ -5,11 +5,11 @@
     <parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="TestPackage.BookTicketTest"/>
-     <!-- <class name="TestPackage.LoginTest"/>
-      <class name="TestPackage.LogoutTest"/>
-      <class name="TestPackage.CreateAccountTest"/>
-      <class name="TestPackage.ResetPasswordTest"/>
-      <class name="TestPackage.CancelBookingTest"/>-->
+	  <class name="TestPackage.LoginTest"/>
+	  <class name="TestPackage.LogoutTest"/>
+	  <class name="TestPackage.CreateAccountTest"/>
+	  <class name="TestPackage.ResetPasswordTest"/>
+	  <class name="TestPackage.CancelBookingTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -11,7 +11,7 @@ import Railway.LoginPage;
 
 
 public class LogoutTest extends BaseTest {
-	@Test(description = "User is redirected to Home page after logging out",enabled = false)
+	@Test(description = "User is redirected to Home page after logging out",enabled = true)
 	public void TC6() {		
 		
 		myUserInfo = new UserInfo(Constant.USERNAME, Constant.PASSWORD);
