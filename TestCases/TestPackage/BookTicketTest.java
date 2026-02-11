@@ -61,12 +61,12 @@ public class BookTicketTest extends BaseTest {
 		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
 		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
-		Assert.assertEquals(actualResult, expectedResult,verifyString);
-		Assert.assertEquals(actualDepartDate, departDate, verifyString);
-		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString);
-		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString);
-		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);		
+		Assert.assertEquals(actualResult, expectedResult,"VP: Message \"Ticket booked successfully!\" displays.");
+		Assert.assertEquals(actualDepartDate, departDate, "VP: Ticket information display correctly Depart Date");
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),"VP: Ticket information display correctly Depart Station");
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),"VP: Ticket information display correctly Arrive Station");
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),"VP: Ticket information display correctly Seat Type");
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),"VP: Ticket information display correctly Amount");		
 	}
 	
 	@Test(description = "User can book many tickets at a time", enabled = true)
@@ -106,12 +106,12 @@ public class BookTicketTest extends BaseTest {
 		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
 		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
-		Assert.assertEquals(actualResult, expectedResult,verifyString);
-		Assert.assertEquals(actualDepartDate, departDate, verifyString);
-		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString);
-		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString);
-		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString);
-		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString);				
+		Assert.assertEquals(actualResult, expectedResult,"VP: Message \"Ticket booked successfully!\" displays.");
+		Assert.assertEquals(actualDepartDate, departDate, "VP: Ticket information display correctly Depart Date");
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),"VP: Ticket information display correctly Depart Station");
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),"VP: Ticket information display correctly Arrive Station");
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),"VP: Ticket information display correctly Seat Type");
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),"VP: Ticket information display correctly Amount");				
 	}
 	
 	@Test(description = "User can check price of ticket from Timetable",enabled = true)
@@ -154,14 +154,14 @@ public class BookTicketTest extends BaseTest {
 		
 		System.out.println(verifyString);
 		
-		Assert.assertEquals(actualPage, expectedPage,verifyString);
-		Assert.assertEquals(expectedTableName, actualTableName,verifyString);
-		Assert.assertEquals(actualPriceHS, "310000",verifyString);
-		Assert.assertEquals(actualPriceSS, "335000",verifyString);
-		Assert.assertEquals(actualPriceSSC, "360000",verifyString);
-		Assert.assertEquals(actualPriceHB, "410000",verifyString);
-		Assert.assertEquals(actualPriceSB, "460000",verifyString);
-		Assert.assertEquals(actualPriceSBC, "510000",verifyString);
+		Assert.assertEquals(actualPage, expectedPage,"VP: \"Ticket Price\" page is loaded.");
+		Assert.assertEquals(expectedTableName, actualTableName,"VP: Ticket table shows \"Ticket price from Đà Nẵng to Sài Gòn\"");
+		Assert.assertEquals(actualPriceHS,  "310000", "VP: Price for each seat displays correctly HS = 310000");
+		Assert.assertEquals(actualPriceSS,  "335000", "VP: Price for each seat displays correctly SS = 335000");
+		Assert.assertEquals(actualPriceSSC, "360000","VP: Price for each seat displays correctly SSC = 360000");
+		Assert.assertEquals(actualPriceHB,  "410000", "VP: Price for each seat displays correctly HB = 410000");
+		Assert.assertEquals(actualPriceSB,  "460000", "VP: Price for each seat displays correctly SB = 460000");
+		Assert.assertEquals(actualPriceSBC, "510000","VP: Price for each seat displays correctly SBC = 510000");
 		
 		
 	}
@@ -201,6 +201,8 @@ public class BookTicketTest extends BaseTest {
 		System.out.println("7. Click on \"Book ticket\" button");
 		bookTicketPage.submit();
 		String verifyString2 = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
+	    System.out.println(verifyString2);
+		
 		String expectedResult = "Ticket booked successfully!";
 		String actualResult = bookTicketPage.getBookTicketMessage();
 		String actualDepartStation = bookTicketPage.getTextFieldBookedTicket(TableHeader.DEPART_STATION);
@@ -209,11 +211,11 @@ public class BookTicketTest extends BaseTest {
 		String actualSeatType = bookTicketPage.getTextFieldBookedTicket(TableHeader.SEAT_TYPE);
 		String actualAmount = bookTicketPage.getTextFieldBookedTicket(TableHeader.AMOUNT);
 		
-		Assert.assertEquals(actualResult, expectedResult,verifyString2);
-		Assert.assertEquals(actualDepartDate, departDate, verifyString2);
-		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),verifyString2);
-		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),verifyString2);
-		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),verifyString2);
-		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),verifyString2);		
+		Assert.assertEquals(actualResult, expectedResult,"VP: Message \"Ticket booked successfully!\" displays.");
+		Assert.assertEquals(actualDepartDate, departDate, "VP: Ticket information display correctly Depart Date");
+		Assert.assertEquals(actualDepartStation, myTicket.getDepartFrom(),"VP: Ticket information display correctly Depart Station");
+		Assert.assertEquals(actualArriveStation, myTicket.getArriveAt(),"VP: Ticket information display correctly Arrive Station");
+		Assert.assertEquals(actualSeatType, myTicket.getSeatType(),"VP: Ticket information display correctly Seat Type");
+		Assert.assertEquals(actualAmount, myTicket.getTicketAmount(),"VP: Ticket information display correctly Amount");		
 	}
 }

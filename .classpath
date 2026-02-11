@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="DataProjects"/>
 	<classpathentry kind="src" path="PageObjects"/>
 	<classpathentry kind="src" path="TestCases"/>
-	<classpathentry kind="src" path="MyLearningSpace"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="module" value="true"/>

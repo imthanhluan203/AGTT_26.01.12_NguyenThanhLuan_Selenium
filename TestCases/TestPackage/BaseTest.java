@@ -16,9 +16,7 @@ import Railway.RegisterPage;
 
 public abstract class BaseTest {
 	
-	protected UserInfo myUserInfo;
-	
-	
+	protected UserInfo myUserInfo;	
 	@Parameters({"browser"})
 	@BeforeMethod
 	public void beforeMethod(String myBrowser) {
@@ -30,16 +28,15 @@ public abstract class BaseTest {
 			System.out.println(myBrowser);
 			Constant.WEBDRIVER = new FirefoxDriver();
 		}
-		
 	}
+	
 	@AfterMethod
 	public void afterMethod() {
 		System.out.println("Post-condition");
 		Constant.WEBDRIVER.quit();
 	}
 	
-	public void register(UserInfo myUser) {
-		
+	public void register(UserInfo myUser) {		
 		//Clean all old mail
 		GuerrillaMail mail = new GuerrillaMail(myUser);
 		

@@ -7,7 +7,7 @@ import Constant.TableHeader;
 
 public class TimeTablePage extends GeneralPage{
 	private final String dynamicXpathTableCell = "((//table//tbody//tr)[%d]//td)[count(//table//thead//tr//th[text()= '%s']//preceding-sibling::th) + 1]";
-	//((//table//tbody//tr)[%d]//td)[count(//table//thead//tr//th[text()= '%s']//preceding-sibling::th) + 1]
+	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T timeTableAction(City from,City to,TableHeader header) {
 		int numTimeTableRows = Constant.WEBDRIVER.findElements(By.xpath("//table//tbody//tr")).size();

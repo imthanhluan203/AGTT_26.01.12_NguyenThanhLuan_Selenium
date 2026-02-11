@@ -49,16 +49,17 @@ public class CancelBookingTest extends BaseTest {
 		System.out.println("6. Click on \"OK\" button on Confirmation message \"Are you sure?\"");
 		ticketPage.clickOke();
 		String verifyString = "The canceled ticket is disappeared";
+		System.out.println(verifyString);
 		String afterCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_STATION);
 		String afterCancelDepartDate = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_DATE);
 		String afterCancelArriveStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.ARRIVE_STATION);
 		String afterCancelSeatType = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.SEAT_TYPE);
 		String afterCancelAmount = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.AMOUNT); 
 		
-		Assert.assertNotEquals(beforeCancelDepartStation, afterCancelDepartStation, verifyString);
-		Assert.assertNotEquals(beforeCancelDepartDate, afterCancelDepartDate, verifyString);
-		Assert.assertNotEquals(beforeCancelArriveStation, afterCancelArriveStation, verifyString);
-		Assert.assertNotEquals(beforeCancelSeatType, afterCancelSeatType, verifyString);
-		Assert.assertNotEquals(beforeCancelAmount, afterCancelAmount, verifyString);
+		Assert.assertNotEquals(beforeCancelDepartStation, afterCancelDepartStation, "VP: The canceled ticket is disappeared");
+		Assert.assertNotEquals(beforeCancelDepartDate, afterCancelDepartDate, "VP: The canceled ticket is disappeared");
+		Assert.assertNotEquals(beforeCancelArriveStation, afterCancelArriveStation, "VP: The canceled ticket is disappeared");
+		Assert.assertNotEquals(beforeCancelSeatType, afterCancelSeatType, "VP: The canceled ticket is disappeared");
+		Assert.assertNotEquals(beforeCancelAmount, afterCancelAmount, "VP: The canceled ticket is disappeared");
 	}
 }

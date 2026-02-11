@@ -10,7 +10,6 @@ public class TicketPage extends GeneralPage {
 	private final String dynamicCancelXpath = "//tr[td[text()='%s']]//input[@value='Cancel']";
 	private final String dynamicXpathIndexOfHeaderTable = "(//tr[td[text()='%s']])//td[count(//tr[th[text()='%s']]//following-sibling::th[text()='%s']//preceding-sibling::th) + 1]";
 	
-	
 	public String getCellValue(String noOfTicket, TableHeader typeOfData) {
 		String xpath = String.format(dynamicXpathIndexOfHeaderTable, noOfTicket, typeOfData.getValue(), typeOfData.getValue());
 		return Utilities.getTextElement(By.xpath(xpath));

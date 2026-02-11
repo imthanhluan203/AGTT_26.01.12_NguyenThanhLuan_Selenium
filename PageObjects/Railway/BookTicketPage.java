@@ -26,43 +26,38 @@ public class BookTicketPage extends GeneralPage {
 	public String getArriveAtText() {
 		return Utilities.getTextElement(_txtArriveStation);
 	}
-	
-	
+		
 	public void select(BookTicketFormField field, String value) {
 	    String xpath = String.format(_dynamicXpathFormField, field.getValue());
 	    new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)))
 	        .selectByVisibleText(value);
 	}
-
 	
 	public String select(BookTicketFormField field, int duration) {
-        if(field == BookTicketFormField.DEPART_DATE) {
-        	String xpath = String.format(_dynamicXpathFormField, field.getValue());
-            Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
-            String currentSelect = mySelect.getFirstSelectedOption().getText();
-    		long julianDay = Utilities.parseDateToJulian(currentSelect);
-    		String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
-    		mySelect.selectByContainsVisibleText(afterSelect);
-    		return afterSelect;
-        }else {
+        if(field != BookTicketFormField.DEPART_DATE) {
         	return "";
         }
+    	String xpath = String.format(_dynamicXpathFormField, field.getValue());
+        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
+        String currentSelect = mySelect.getFirstSelectedOption().getText();
+		long julianDay = Utilities.parseDateToJulian(currentSelect);
+		String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
+		mySelect.selectByContainsVisibleText(afterSelect);
+		return afterSelect;        
     }
 	
 	public String select(BookTicketFormField field,String yourDay, int duration) {
-		if(field == BookTicketFormField.DEPART_DATE) {
-			String xpath = String.format(_dynamicXpathFormField, field.getValue());
-	        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
-	        System.out.println(yourDay);
-	        long julianDay = Utilities.parseDateToJulian(yourDay);
-			String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
-			System.out.println(afterSelect);
-			mySelect.selectByContainsVisibleText(afterSelect);
-			return afterSelect;
-		}
-		else {
+		if(field != BookTicketFormField.DEPART_DATE) {
 			return "";
-        }
+		}
+		String xpath = String.format(_dynamicXpathFormField, field.getValue());
+        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
+        System.out.println(yourDay);
+        long julianDay = Utilities.parseDateToJulian(yourDay);
+		String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
+		System.out.println(afterSelect);
+		mySelect.selectByContainsVisibleText(afterSelect);
+		return afterSelect;
 	}
 	
 	public void submit() {
@@ -82,15 +77,24 @@ public class BookTicketPage extends GeneralPage {
 		}
 		String xpath = String.format("//select[@name='%s']",BookTicketFormField.ARRIVE_AT.getValue());
 		
-		WebElement element = Constant.WEBDRIVER.findElement(By.xpath(xpath));
+		if(!myTicket.getDepartFrom().isEmpty()) {
+			WebElement element = Constant.WEBDRIVER.findElement(By.xpath(xpath));
+			this.select(BookTicketFormField.DEPART_FROM, myTicket.getDepartFrom());
+			Utilities.waitForNewState(element);
+		}
 		
-		this.select(BookTicketFormField.DEPART_FROM, myTicket.getDepartFrom());
+		if(!myTicket.getArriveAt().isEmpty()) {
+			this.select(BookTicketFormField.ARRIVE_AT, myTicket.getArriveAt());
+		}
 		
-		Utilities.waitForNewState(element);
+		if(!myTicket.getSeatType().isEmpty()) {
+			this.select(BookTicketFormField.SEAT_TYPE, myTicket.getSeatType());
+		}
 		
-		this.select(BookTicketFormField.ARRIVE_AT, myTicket.getArriveAt());
-		this.select(BookTicketFormField.SEAT_TYPE, myTicket.getSeatType());
-		this.select(BookTicketFormField.TICKET_AMOUNT, myTicket.getTicketAmount());
+		if(!myTicket.getTicketAmount().isEmpty()) {
+			this.select(BookTicketFormField.TICKET_AMOUNT, myTicket.getTicketAmount());
+		}
+		
 		return departDate;
 	}
 	
@@ -98,5 +102,6 @@ public class BookTicketPage extends GeneralPage {
 		String myXpath = String.format(_dynamicXpathBookTicketPage, field.getValue(),field.getValue());
 		return Utilities.getTextElement(By.xpath(myXpath));
 	}
+	
 	
 }

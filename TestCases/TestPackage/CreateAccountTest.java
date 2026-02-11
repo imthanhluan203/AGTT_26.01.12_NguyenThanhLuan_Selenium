@@ -14,8 +14,7 @@ import Railway.RegisterPage;
 public class CreateAccountTest extends BaseTest{
 	
 	@Test(description = "User can't create account with an already in-use email", enabled = true)
-	public void TC7() {
-		
+	public void TC7() {		
 		myUserInfo = new UserInfo(Constant.USERNAME, "0987654321");
 		
 		String expectedResult = "This email address is already in use.";
@@ -29,19 +28,16 @@ public class CreateAccountTest extends BaseTest{
 		System.out.println("2. Click on \"Register\" tab.");
 		
 		RegisterPage registerPage = home.gotoPage(Tab.REGISTER, RegisterPage.class);
-		
-		
+				
 		System.out.println("3. Enter information of the created account in Pre-condition");
 		System.out.println("4. Click on \"Register\" button.");
-		
-		
+				
 		registerPage.register(myUserInfo);		
 		String actualResult = registerPage.getErrorMessage();
-		
-		
+				
 		String verifyString = "VP: Error message \"This email address is already in use.\" displays above the form.";
 		System.out.println(verifyString);
-		Assert.assertEquals(actualResult, expectedResult, verifyString);
+		Assert.assertEquals(actualResult, expectedResult, "VP: Error message \"This email address is already in use.\" displays above the form.");
 		
 	}
 	
@@ -72,9 +68,9 @@ public class CreateAccountTest extends BaseTest{
 		
 		String verifyString = "VP: Message \"There're errors in the form. Please correct the errors and try again.\" appears above the form. Next to password fields, error message \"Invalid password length.\" displays. Next to PID field, error message \"Invalid ID length.\" displays.";
 		System.out.println(verifyString);
-		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, verifyString);
-		Assert.assertEquals(actualResultPassword, expectedResultPassword, verifyString);
-		Assert.assertEquals(actualResultPid, expectedResultPid, verifyString);	
+		Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "VP: Message \"There're errors in the form. Please correct the errors and try again.\" appears above the form.");
+		Assert.assertEquals(actualResultPassword, expectedResultPassword, "VP: Next to password fields, error message \"Invalid password length.\" displays");
+		Assert.assertEquals(actualResultPid, expectedResultPid, "VP: Next to PID field, error message \"Invalid ID length.\" displays");	
 	}
 	
 	@Test(description = "User create and activate account", enabled = true)
@@ -98,18 +94,17 @@ public class CreateAccountTest extends BaseTest{
 	    System.out.println(verifyString1);
 	    System.out.println(verifyString2);
 	    if(!accPage.checkTabPageExist(Tab.REGISTER)) {
-	    	Assert.fail(verifyString1);
-	    	Assert.fail(verifyString2);
+	    	Assert.fail("VP: Home page is shown with guide containing href \"create an account\" to \"Register\" page");
+	    	Assert.fail("VP: Register page is shown");
 	    }
-	    
-	    
+	    	    
 		System.out.println("3. Enter valid information into all fields");
 		System.out.println("4. Click on \"Register\" button");	
 		accPage.register(myUserInfo);	
 		String verifyString3 = "VP: \"Thank you for registering your account\" is shown";
 		String actualResult3 = "Thank you for registering your account";
 		System.out.println(verifyString3);
-		Assert.assertEquals(expectedResult3, actualResult3,verifyString3);
+		Assert.assertEquals(expectedResult3, actualResult3,"VP: \"Thank you for registering your account\" is shown");
 		
 		System.out.println("5. Get email information (webmail address, mailbox and password) and navigate to that webmail.");
 		System.out.println("6. Login to the mailbox");
@@ -125,7 +120,7 @@ public class CreateAccountTest extends BaseTest{
 		String actualResult4 = accPage.getWelcomeMessage();
 		String verifyString4 = "VP: Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site\" is shown";
 		System.out.println(verifyString4);
-		Assert.assertEquals(expectedResult4, actualResult4,verifyString4);
+		Assert.assertEquals(expectedResult4, actualResult4,"VP: Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site\" is shown");
 	}
 	
 }

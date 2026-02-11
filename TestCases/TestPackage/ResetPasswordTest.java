@@ -14,8 +14,7 @@ import Railway.ResetAccountPage;
 
 public class ResetPasswordTest extends BaseTest {
 	@Test(description = "Reset password shows error if the new password is same as current", enabled = true)
-	public void TC10() {
-		
+	public void TC10() {		
 		String expectedResult = "The new password cannot be the same with the current password";
 		
 		System.out.println("Pre-condition: an actived account is existing");
@@ -52,9 +51,8 @@ public class ResetPasswordTest extends BaseTest {
 		ResetAccountPage reset = new ResetAccountPage();
 		System.out.println(verifyString);
 		String tokenReset = reset.getResetoken();
-		Assert.assertTrue(tokenReset.length() > 1, verifyString);
-		
-		
+		Assert.assertTrue(tokenReset.length() > 1, "VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
+			
 		System.out.println("8. Input same password into 2 fields  \"new password\" and \"confirm password\"");
 		reset.enterPassword(newPassWord);
 		reset.enterConfirmPassword(newPassWord);
@@ -64,7 +62,7 @@ public class ResetPasswordTest extends BaseTest {
 		verifyString = "VP: Message \"The new password cannot be the same with the current password\" is shown";
 		System.out.println(verifyString);
 		String actualResult = reset.getMessageReset();
-		Assert.assertEquals(actualResult, expectedResult, verifyString);
+		Assert.assertEquals(actualResult, expectedResult, "VP: Message \"The new password cannot be the same with the current password\" is shown");
 		
 	}
 	

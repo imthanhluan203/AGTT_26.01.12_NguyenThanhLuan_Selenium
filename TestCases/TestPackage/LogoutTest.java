@@ -15,27 +15,21 @@ public class LogoutTest extends BaseTest {
 	public void TC6() {		
 		
 		myUserInfo = new UserInfo(Constant.USERNAME, Constant.PASSWORD);
-		System.out.println("1. Navigate to QA Railway Website");
-		
+		System.out.println("1. Navigate to QA Railway Website");	
 		HomePage home = new HomePage();
 		home.open();
 		
-		System.out.println("2. Login with valid Email and Password");
-		
+		System.out.println("2. Login with valid Email and Password");		
 		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		GeneralPage myPage = loginPage.login(myUserInfo);
 		
-		System.out.println("3. Click on \"FAQ\" tab");
-		
+		System.out.println("3. Click on \"FAQ\" tab");		
 		FAQPage faqPage = myPage.gotoPage(Tab.FAQ, FAQPage.class);
 		
-		System.out.println("4. Click on \"Log out\" tab");
-		
+		System.out.println("4. Click on \"Log out\" tab");		
 		faqPage.gotoPage(Tab.LOGOUT, HomePage.class);
-		//faqPage.clickTab(Tab.LOGOUT);
 		
-		System.out.println("VP: Verify that Home page displays \"Log out\" tab is disappeared.");
-		
+		System.out.println("VP: Verify that Home page displays \"Log out\" tab is disappeared.");	
 		Assert.assertTrue(!home.checkTabPageExist(Tab.LOGOUT), "VP: Verify that Home page displays \"Log out\" tab is disappeared.");
 	}
 	
