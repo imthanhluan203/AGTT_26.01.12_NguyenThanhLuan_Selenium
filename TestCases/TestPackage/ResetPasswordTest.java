@@ -18,7 +18,9 @@ public class ResetPasswordTest extends BaseTest {
 		String expectedResult = "The new password cannot be the same with the current password";
 		
 		System.out.println("Pre-condition: an actived account is existing");
-		myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		//myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
+		register(myUserInfo);
 		String newPassWord = myUserInfo.getPassword();
 		
 		//Clean all old mail before go to the next step
@@ -73,7 +75,9 @@ public class ResetPasswordTest extends BaseTest {
 		String expectedResult2 = "The password confirmation did not match the new password.";
 		
 		System.out.println("Pre-condition: an actived account is existing");
-		myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		//myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
+		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
+		register(myUserInfo);
 		String newPassWord ="first" + myUserInfo.getPassword();
 		String confirmPassWord ="second" + myUserInfo.getPassword();
 		

@@ -25,12 +25,11 @@ public class BookTicketTest extends BaseTest {
 	public void TC12() {
 		
 		String expectedResult = "Ticket booked successfully!";
-		int duration = 2;
 		
 		System.out.println("Pre-condition: an actived account is existing.");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
 		register(myUserInfo);
-		Ticket myTicket = new Ticket(City.NHATRANG, City.HUE, SeatType.SBC, "1",duration);
+		Ticket myTicket = new Ticket(City.NHATRANG, City.HUE, SeatType.SBC, "1",2);
 		
 		System.out.println("1. Navigate to QA Railway Website.");
 		HomePage homePage = new HomePage();
@@ -51,7 +50,7 @@ public class BookTicketTest extends BaseTest {
 		
 		System.out.println("8. Click on \"Book ticket\" button");
 		bookTicketPage.submit();
-		//Tách verify r
+	
 		String verifyString = "VP: Message \"Ticket booked successfully!\" displays. Ticket information display correctly (Depart Date,  Depart Station,  Arrive Station,  Seat Type,  Amount)";
 		System.out.println(verifyString);
 		String actualResult = bookTicketPage.getBookTicketMessage();
@@ -161,8 +160,7 @@ public class BookTicketTest extends BaseTest {
 		Assert.assertEquals(actualPriceSSC, "360000","VP: Price for each seat displays correctly SSC = 360000");
 		Assert.assertEquals(actualPriceHB,  "410000", "VP: Price for each seat displays correctly HB = 410000");
 		Assert.assertEquals(actualPriceSB,  "460000", "VP: Price for each seat displays correctly SB = 460000");
-		Assert.assertEquals(actualPriceSBC, "510000","VP: Price for each seat displays correctly SBC = 510000");
-		
+		Assert.assertEquals(actualPriceSBC, "510000","VP: Price for each seat displays correctly SBC = 510000");		
 		
 	}
 	

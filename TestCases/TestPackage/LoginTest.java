@@ -24,7 +24,6 @@ public class LoginTest extends BaseTest{
 		home.open();
 	    
 	    System.out.println("2. Click on \"Login\" tab.");
-	    
 		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
@@ -33,7 +32,6 @@ public class LoginTest extends BaseTest{
 		
 		String verifyString = "VP: User is logged into Railway. Welcome user message is displayed";
 		System.out.println(verifyString);
-		
 		Assert.assertEquals(actualResult, expectedResult, "VP: User is logged into Railway. Welcome user message is displayed");		   
 		
 	}

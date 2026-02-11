@@ -78,16 +78,18 @@ public class CreateAccountTest extends BaseTest{
 		String expectedResult3 = "Thank you for registering your account";	
 		String expectedResult4 = "Registration Confirmed! You can now log in to the site.";
 		
-		String username = Utilities.generateRandomString(15) + Constant.MAIL_TYPE;
-		String password = "123456789";
+//		String username = Utilities.generateRandomString(15) + Constant.MAIL_TYPE;
+//		String password = "123456789";
+//		
+//		myUserInfo = new UserInfo(username, password);
 		
-		myUserInfo = new UserInfo(username, password);
+		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
+		
 		System.out.println("1. Navigate to QA Railway Website");
 		HomePage myHome = new HomePage();
 		myHome.open();
 		
-		System.out.println("2. Click on \"Create an account\"");
-		
+		System.out.println("2. Click on \"Create an account\"");		
 	    RegisterPage accPage = myHome.getCreateAccountPage();
 	    String verifyString1 = "VP: Home page is shown with guide containing href \"create an account\" to \"Register\" page";
 	    String verifyString2 = "VP: Register page is shown";
