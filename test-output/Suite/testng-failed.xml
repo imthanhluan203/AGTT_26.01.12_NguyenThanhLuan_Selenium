@@ -4,45 +4,6 @@
   <test thread-count="5" name="Railway Exercise(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="TestPackage.BookTicketTest">
-        <methods>
-          <include name="TC12"/>
-          <include name="beforeMethod"/>
-          <include name="TC15"/>
-          <include name="TC14"/>
-          <include name="afterMethod"/>
-          <include name="TC13"/>
-        </methods>
-      </class> <!-- TestPackage.BookTicketTest -->
-      <class name="TestPackage.CreateAccountTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="TC9"/>
-        </methods>
-      </class> <!-- TestPackage.CreateAccountTest -->
-      <class name="TestPackage.CancelBookingTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="TC16"/>
-        </methods>
-      </class> <!-- TestPackage.CancelBookingTest -->
-      <class name="TestPackage.ResetPasswordTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="TC10"/>
-          <include name="TC11"/>
-        </methods>
-      </class> <!-- TestPackage.ResetPasswordTest -->
-      <class name="TestPackage.LogoutTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="TC6"/>
-        </methods>
-      </class> <!-- TestPackage.LogoutTest -->
       <class name="TestPackage.LoginTest">
         <methods>
           <include name="beforeMethod"/>

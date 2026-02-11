@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="3" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-12T05:36:15 ICT" name="Default suite" finished-at="2026-02-12T05:37:53 ICT" duration-ms="98335">
+  <suite started-at="2026-02-12T06:31:04 ICT" name="Default suite" finished-at="2026-02-12T06:31:59 ICT" duration-ms="55081">
     <groups>
     </groups>
-    <test started-at="2026-02-12T05:36:15 ICT" name="Default test" finished-at="2026-02-12T05:37:53 ICT" duration-ms="98335">
-      <class name="TestPackage.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:36:15 ICT" name="beforeMethod" finished-at="2026-02-12T05:36:17 ICT" duration-ms="2220" status="PASS">
+    <test started-at="2026-02-12T06:31:04 ICT" name="Default test" finished-at="2026-02-12T06:31:59 ICT" duration-ms="55081">
+      <class name="TestPackage.LoginTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:04 ICT" name="beforeMethod" finished-at="2026-02-12T06:31:06 ICT" duration-ms="1914" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,57 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:36:17 ICT" name="TC10" description="Reset password shows error if the new password is same as current" finished-at="2026-02-12T05:37:05 ICT" duration-ms="47470" status="FAIL">
+        <test-method signature="TC1()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:06 ICT" name="TC1" description="TC1: User can log into Railway with valid username and password" finished-at="2026-02-12T06:31:11 ICT" duration-ms="5871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:11 ICT" name="afterMethod" finished-at="2026-02-12T06:31:12 ICT" duration-ms="352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:12 ICT" name="beforeMethod" finished-at="2026-02-12T06:31:13 ICT" duration-ms="960" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC2()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:13 ICT" name="TC2" description="User cannot login with blank &quot;Username&quot; textbox" finished-at="2026-02-12T06:31:20 ICT" duration-ms="7447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC2 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:20 ICT" name="afterMethod" finished-at="2026-02-12T06:31:20 ICT" duration-ms="300" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:20 ICT" name="beforeMethod" finished-at="2026-02-12T06:31:22 ICT" duration-ms="1106" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC3()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:22 ICT" name="TC3" description="User cannot log into Railway with invalid password." finished-at="2026-02-12T06:31:29 ICT" duration-ms="7494" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[VP: Message "The new password cannot be the same with the current password" is shown expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]]]>
+              <![CDATA[Verify that Error message "There was a problem with your login and/or errors exist in your form." is displayed expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: VP: Message "The new password cannot be the same with the current password" is shown expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]
+              <![CDATA[java.lang.AssertionError: Verify that Error message "There was a problem with your login and/or errors exist in your form." is displayed expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.ResetPasswordTest.TC10(ResetPasswordTest.java:67)
+at TestPackage.LoginTest.TC3(LoginTest.java:85)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -62,12 +100,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC10 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:37:05 ICT" name="afterMethod" finished-at="2026-02-12T05:37:05 ICT" duration-ms="400" status="PASS">
+        </test-method> <!-- TC3 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:29 ICT" name="afterMethod" finished-at="2026-02-12T06:31:29 ICT" duration-ms="294" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:37:05 ICT" name="beforeMethod" finished-at="2026-02-12T05:37:06 ICT" duration-ms="1123" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:29 ICT" name="beforeMethod" finished-at="2026-02-12T06:31:31 ICT" duration-ms="1134" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -78,15 +116,75 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:37:06 ICT" name="TC11" description="Reset password shows error if the new password and confirm password doesn&#039;t match" finished-at="2026-02-12T05:37:53 ICT" duration-ms="46642" status="PASS">
+        <test-method signature="TC4()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:31 ICT" name="TC4" description="System shows message when user enters wrong password many times" finished-at="2026-02-12T06:31:50 ICT" duration-ms="19013" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[VP: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes." appears. expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: VP: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes." appears. expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at TestPackage.LoginTest.TC4(LoginTest.java:118)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-12T05:37:53 ICT" name="afterMethod" finished-at="2026-02-12T05:37:53 ICT" duration-ms="393" status="PASS">
+        </test-method> <!-- TC4 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:50 ICT" name="afterMethod" finished-at="2026-02-12T06:31:50 ICT" duration-ms="316" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.ResetPasswordTest -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:50 ICT" name="beforeMethod" finished-at="2026-02-12T06:31:51 ICT" duration-ms="1150" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC5()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:51 ICT" name="TC5" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2026-02-12T06:31:58 ICT" duration-ms="7390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC5 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@13c9d689]" started-at="2026-02-12T06:31:58 ICT" name="afterMethod" finished-at="2026-02-12T06:31:59 ICT" duration-ms="244" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestPackage.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -17,6 +17,7 @@ public abstract class GeneralPage {
       
     public Boolean checkTabPageExist(Tab tabName) {
     	try {
+    		
     		Constant.WEBDRIVER.findElement(By.xpath(String.format(tabXpath, tabName.getValue())));
     		return true;
 		} catch (Exception e) {
