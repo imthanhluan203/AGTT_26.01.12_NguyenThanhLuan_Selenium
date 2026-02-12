@@ -11,12 +11,13 @@ import DataObjects.Ticket;
 
 public class BookTicketPage extends GeneralPage {
 	
-	private final String _dynamicXpathFormField = "//select[@name='%s']";
+	private String _dynamicXpathFormField = "//select[@name='%s']";
+	private String _dynamicXpathBookTicketPage = "(//tr[th[text()='%s']]//following-sibling::tr//td)[count(//tr//th[text()='%s']//preceding-sibling::th) + 1]";
+
 	private final By _btnSubmit = By.xpath("//input[@type='submit']");
-	private final By _txtMessage = By.xpath("//h1");
+	private final By _txtMessage = By.xpath("//h1[text()='Ticket booked successfully!']");
 	private final By _txtDepartStation = By.xpath("//select[@name='DepartStation']/option[@selected]");
 	private final By _txtArriveStation = By.xpath("//select[@name='ArriveStation']/option[@selected]");
-	private final String _dynamicXpathBookTicketPage = "(//tr[th[text()='%s']]//following-sibling::tr//td)[count(//tr//th[text()='%s']//preceding-sibling::th) + 1]";
 	
 	
 	public String getDepartionText() {
@@ -29,6 +30,7 @@ public class BookTicketPage extends GeneralPage {
 		
 	public void select(BookTicketFormField field, String value) {
 	    String xpath = String.format(_dynamicXpathFormField, field.getValue());
+	    Utilities.scrollToElement(By.xpath(xpath));
 	    new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)))
 	        .selectByVisibleText(value);
 	}
@@ -38,6 +40,7 @@ public class BookTicketPage extends GeneralPage {
         	return "";
         }
     	String xpath = String.format(_dynamicXpathFormField, field.getValue());
+    	Utilities.scrollToElement(By.xpath(xpath));
         Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
         String currentSelect = mySelect.getFirstSelectedOption().getText();
 		long julianDay = Utilities.parseDateToJulian(currentSelect);
@@ -51,6 +54,7 @@ public class BookTicketPage extends GeneralPage {
 			return "";
 		}
 		String xpath = String.format(_dynamicXpathFormField, field.getValue());
+		Utilities.scrollToElement(By.xpath(xpath));
         Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
         System.out.println(yourDay);
         long julianDay = Utilities.parseDateToJulian(yourDay);

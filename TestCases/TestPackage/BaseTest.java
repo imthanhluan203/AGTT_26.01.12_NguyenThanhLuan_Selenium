@@ -50,7 +50,7 @@ public abstract class BaseTest {
 		Constant.WEBDRIVER.get(Constant.EMAIL_URL);
 		mail.setAnEmail();	
 		mail.waitAndClickConfirmEmail();
-		
+		Utilities.waitForTabFullyLoad(Tab.REGISTER);
 		Utilities.closeAllTabsExceptMain("Safe Railway");
 		
 	}

@@ -3,10 +3,11 @@ import org.openqa.selenium.By;
 import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
+import Constant.Tab;
 import Constant.TableHeader;
 
 public class TimeTablePage extends GeneralPage{
-	private final String dynamicXpathTableCell = "((//table//tbody//tr)[%d]//td)[count(//table//thead//tr//th[text()= '%s']//preceding-sibling::th) + 1]";
+	private String dynamicXpathTableCell = "((//table//tbody//tr)[%d]//td)[count(//table//thead//tr//th[text()= '%s']//preceding-sibling::th) + 1]";
 	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T timeTableAction(City from,City to,TableHeader header) {
@@ -24,6 +25,7 @@ public class TimeTablePage extends GeneralPage{
 		String xpath = String.format(xpathCheckPrice,indexNumber, header.getValue());
 		Utilities.click(By.xpath(xpath));
 		if(header == TableHeader.CHECK_PRICE) {
+			Utilities.waitForTabFullyLoad(Tab.TICKETPRICE);
 			return (T) new TicketPricePage();
 		}
 		return (T) new BookTicketPage();

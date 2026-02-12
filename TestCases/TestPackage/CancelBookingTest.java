@@ -3,7 +3,9 @@ package TestPackage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import Common.Utilities;
 import Constant.City;
+import Constant.Constant;
 import Constant.SeatType;
 import Constant.Tab;
 import Constant.TableHeader;
@@ -18,7 +20,8 @@ public class CancelBookingTest extends BaseTest {
 	@Test(description = "Cancel booking",enabled = true)
 	public void TC16() {
 		System.out.println("Pre-condition: an actived account is existing");
-		myUserInfo = new UserInfo("lonxskqi@sharklasers.com", "987654321");
+		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
+		register(myUserInfo);
 		Ticket myTicket = new Ticket(City.QUANGNGAI, City.HUE, SeatType.HS, "1",1);
 		
 		System.out.println("1. Navigate to QA Railway Website");
@@ -32,7 +35,7 @@ public class CancelBookingTest extends BaseTest {
 		System.out.println("3. Book a ticket");
 		BookTicketPage bookTicketPage = homePage.gotoPage(Tab.BOOKTICKET, BookTicketPage.class);
 		bookTicketPage.bookTicket(myTicket);
-		//bookTicketPage.submit();
+		bookTicketPage.submit();
 		
 		System.out.println("4. Click on \"My ticket\" tab");
 		TicketPage ticketPage = bookTicketPage.gotoPage(Tab.MYTICKET, TicketPage.class);

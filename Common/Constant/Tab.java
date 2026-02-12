@@ -9,7 +9,8 @@ public enum Tab {
 	CREATE("create an account"),
 	BOOKTICKET("Book ticket"),
 	TIMETABLE("Timetable"),
-	MYTICKET("My ticket");
+	MYTICKET("My ticket"),
+	TICKETPRICE("Ticket Price");
 	
     private final String value;
 
@@ -20,4 +21,5 @@ public enum Tab {
     public String getValue() {
         return value;
     }
+    
 }

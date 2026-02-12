@@ -14,6 +14,7 @@ public class HomePage extends GeneralPage {
 		Constant.WEBDRIVER.navigate().to(Constant.RAILWAY_URL);
 		return this;
 	}
+	
 	public String getWelcomeMessage() {
 		return Utilities.getTextElement(_txtWelcomeMessage);
 	}

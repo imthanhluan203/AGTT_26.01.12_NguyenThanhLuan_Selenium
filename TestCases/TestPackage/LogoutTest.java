@@ -21,6 +21,8 @@ public class LogoutTest extends BaseTest {
 		
 		System.out.println("2. Login with valid Email and Password");		
 		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		
+		System.out.println(Constant.WEBDRIVER.getTitle());
 		GeneralPage myPage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Click on \"FAQ\" tab");		
