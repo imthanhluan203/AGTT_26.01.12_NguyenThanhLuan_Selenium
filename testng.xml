@@ -2,14 +2,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="Railway Exercise">
-    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="browser" value="firefox"></parameter>
     <classes>
-    	  <class name="TestPackage.LoginTest"/>
+    	  <!--<class name="TestPackage.LoginTest"/>
 		  <class name="TestPackage.LogoutTest"/>
 		  <class name="TestPackage.CreateAccountTest"/>
 		  <class name="TestPackage.ResetPasswordTest"/>
       	  <class name="TestPackage.BookTicketTest"/>
-		  <class name="TestPackage.CancelBookingTest"/>
+		  <class name="TestPackage.CancelBookingTest"/>-->
+		  <class name="TestPackage.ResetPasswordTest"/>
 
     </classes>
   </test> <!-- Test -->

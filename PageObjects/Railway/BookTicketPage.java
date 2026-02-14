@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import Common.Utilities;
 import Constant.BookTicketFormField;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.TableHeader;
 import DataObjects.Ticket;
 
@@ -66,6 +67,7 @@ public class BookTicketPage extends GeneralPage {
 	
 	public void submit() {
 		Utilities.click(_btnSubmit);
+		Utilities.waitForPageFullyLoad(PageTitle.MY_TICKET);
 	}
 	
 	public String getBookTicketMessage() {

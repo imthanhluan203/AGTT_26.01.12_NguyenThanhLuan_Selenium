@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 
 public abstract class GeneralPage {	
@@ -25,11 +26,11 @@ public abstract class GeneralPage {
 		}
     }
     
-	public <T extends GeneralPage> T gotoPage(Tab tab,Class<T> pageClass)  {
+	public <T extends GeneralPage> T gotoPage(Tab tab,PageTitle page ,Class<T> pageClass)  {
 		
 		By tabPara = By.xpath(String.format(tabXpath, tab.getValue()));
 		Utilities.click(tabPara);
-		Utilities.waitForTabFullyLoad(tab);
+		Utilities.waitForPageFullyLoad(page);
 		try {
 			return pageClass.getDeclaredConstructor().newInstance();
 		} catch (Exception e) {

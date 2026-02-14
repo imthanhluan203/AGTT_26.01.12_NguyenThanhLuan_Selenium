@@ -3,6 +3,7 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
+import Constant.PageTitle;
 import DataObjects.UserInfo;
 
 public class RegisterPage extends GeneralPage {
@@ -44,7 +45,7 @@ public class RegisterPage extends GeneralPage {
 		Utilities.enter(_txtConfirmPassword, myInfo.getPassword());
 		Utilities.enter(_txtPassport, myInfo.getPid());
 		Utilities.click(_btnSubmit);
-
+		Utilities.waitForPageFullyLoad(PageTitle.REGISTER_THANK);
 		return new RegisterPage();
 	}
 	

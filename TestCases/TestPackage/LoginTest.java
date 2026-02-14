@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 import DataObjects.UserInfo;
 import Railway.HomePage;
@@ -24,7 +25,7 @@ public class LoginTest extends BaseTest{
 		home.open();
 	    
 	    System.out.println("2. Click on \"Login\" tab.");
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
 		HomePage myPage = loginPage.login(myUserInfo);
@@ -49,7 +50,7 @@ public class LoginTest extends BaseTest{
 		home.open();
 		
 		System.out.println("2. Click on \"Login\" tab");		
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		System.out.println("3. User doesn't type any words into \"Username\" textbox but enter valid information into \"Password\" textbox ");
 		System.out.println("4. Click on \"Login\" button");
@@ -73,7 +74,7 @@ public class LoginTest extends BaseTest{
 		home.open();
 		
 		System.out.println("2. Click on \"Login\" tab");	
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and invalid Password");		
 		System.out.println("4. Click on \"Login\" button");		
@@ -98,7 +99,7 @@ public class LoginTest extends BaseTest{
 		home.open();
 		
 		System.out.println("2. Click on \"Login\" tab");
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		for(int i=0;i<3;i++) {
 			System.out.printf("Run step 3 and 4: %d time. %n",i+1);
@@ -129,7 +130,7 @@ public class LoginTest extends BaseTest{
 		home.open();
  
 	    System.out.println("2. Click on \"Login\" tab.");
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		System.out.println("3. Enter valid Email and Password.");
 		LoginPage myPage = loginPage.login(myUserInfo);		

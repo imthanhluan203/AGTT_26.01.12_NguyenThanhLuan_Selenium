@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 import DataObjects.UserInfo;
 import Guerrillamail.GuerrillaMail;
@@ -25,7 +26,7 @@ public class CreateAccountTest extends BaseTest{
 		home.open();
 		
 		System.out.println("2. Click on \"Register\" tab.");
-		RegisterPage registerPage = home.gotoPage(Tab.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = home.gotoPage(Tab.REGISTER,PageTitle.REGISTER, RegisterPage.class);
 				
 		System.out.println("3. Enter information of the created account in Pre-condition");
 		System.out.println("4. Click on \"Register\" button.");		
@@ -53,7 +54,7 @@ public class CreateAccountTest extends BaseTest{
 		
 		System.out.println("2. Click on \"Register\" tab");
 		
-		RegisterPage registerPage = home.gotoPage(Tab.REGISTER, RegisterPage.class);
+		RegisterPage registerPage = home.gotoPage(Tab.REGISTER,PageTitle.REGISTER, RegisterPage.class);
 		
 		System.out.println("3. Enter valid email address and leave other fields empty.");
 		System.out.println("4. Click on \"Register\" button");
@@ -109,8 +110,7 @@ public class CreateAccountTest extends BaseTest{
 		System.out.println("7. Open email with subject containing \"Please confirm your account\"  and the email of the new account at step 3");		
 		System.out.println("8. Click on the activate link");
 		mail.waitAndClickConfirmEmail();
-		Utilities.closeAllTabsExceptMain("Safe Railway");
-		
+		Utilities.closeAllTabsExceptMain(PageTitle.REGISTER_CONFIRM);
 		String actualResult4 = accPage.getWelcomeMessage();
 		String verifyString4 = "VP: Redirect to Railways page and message \"Registration Confirmed! You can now log in to the site\" is shown";
 		System.out.println(verifyString4);

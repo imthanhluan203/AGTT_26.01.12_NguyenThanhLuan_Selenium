@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 import DataObjects.UserInfo;
 import Guerrillamail.GuerrillaMail;
@@ -18,7 +19,6 @@ public class ResetPasswordTest extends BaseTest {
 		String expectedResult = "The new password cannot be the same with the current password";
 		
 		System.out.println("Pre-condition: an actived account is existing");
-		//myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
 		register(myUserInfo);
 		String newPassWord = myUserInfo.getPassword();
@@ -32,7 +32,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("1. Navigate to QA Railway Login page");
 		HomePage home = new HomePage();
 		home.open();
-		LoginPage login = home.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage login = home.gotoPage(Tab.LOGIN, PageTitle.LOGIN, LoginPage.class);
 		
 		System.out.println("2. Click on \"Forgot Password page\" link");
 		login.clickForgotPassword();
@@ -48,7 +48,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("6. Open email with subject contaning \"Please reset your password\" and the email of the account at step 3");
 		System.out.println("7. Click on reset link");//Redirect to Railways page and Form "Password Change Form" is shown with the reset password token
 		mail.waitAndClickConfirmEmail();
-		Utilities.closeAllTabsExceptMain("Safe Railway");
+		Utilities.closeAllTabsExceptMain(PageTitle.RESET_PASSWORD);
 		String verifyString = "VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token";
 		ResetAccountPage reset = new ResetAccountPage();
 		System.out.println(verifyString);
@@ -56,11 +56,8 @@ public class ResetPasswordTest extends BaseTest {
 		Assert.assertTrue(tokenReset.length() > 1, "VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token");
 			
 		System.out.println("8. Input same password into 2 fields  \"new password\" and \"confirm password\"");
-		reset.enterPassword(newPassWord);
-		reset.enterConfirmPassword(newPassWord);
-		
-		System.out.println("9. Click Reset Password");//Message "The new password cannot be the same with the current password" is shown
-		reset.clickSubmitButton();
+		System.out.println("9. Click Reset Password");
+		reset.resetPassWord(newPassWord, newPassWord);
 		verifyString = "VP: Message \"The new password cannot be the same with the current password\" is shown";
 		System.out.println(verifyString);
 		String actualResult = reset.getMessageReset();
@@ -75,7 +72,6 @@ public class ResetPasswordTest extends BaseTest {
 		String expectedResult2 = "The password confirmation did not match the new password.";
 		
 		System.out.println("Pre-condition: an actived account is existing");
-		//myUserInfo = new UserInfo("hwtwwups@sharklasers.com", "987654321");
 		myUserInfo = new UserInfo(Utilities.generateRandomString(15) + Constant.MAIL_TYPE, Constant.PASSWORD);
 		register(myUserInfo);
 		String newPassWord ="first" + myUserInfo.getPassword();
@@ -90,7 +86,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("1. Navigate to QA Railway Login page");
 		HomePage home = new HomePage();
 		home.open();
-		LoginPage login = home.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage login = home.gotoPage(Tab.LOGIN, PageTitle.LOGIN, LoginPage.class);
 		
 		System.out.println("2. Click on \"Forgot Password page\" link");
 		login.clickForgotPassword();
@@ -106,7 +102,7 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("6. Open email with subject contaning \"Please reset your password\" and the email of the account at step 3");
 		System.out.println("7. Click on reset link"); //Redirect to Railways page and Form "Password Change Form" is shown with the reset password token
 		mail.waitAndClickConfirmEmail();
-		Utilities.closeAllTabsExceptMain("Safe Railway");
+		Utilities.closeAllTabsExceptMain(PageTitle.RESET_PASSWORD);
 		String verifyString1 = "VP: Redirect to Railways page and Form \"Password Change Form\" is shown with the reset password token";
 		ResetAccountPage reset = new ResetAccountPage();
 		System.out.println(verifyString1);
@@ -117,17 +113,14 @@ public class ResetPasswordTest extends BaseTest {
 		System.out.println("9. Click Reset Password");
 		//Error message "Could not reset password. Please correct the errors and try again." displays above the form.
 		//Error message "The password confirmation did not match the new password." displays next to the confirm password field.
-		reset.enterPassword(newPassWord);
-		reset.enterConfirmPassword(confirmPassWord);
-		reset.clickSubmitButton();
-		
+		reset.resetPassWord(newPassWord, confirmPassWord);
 		String verifyString2 = "VP: Error message \"Could not reset password. Please correct the errors and try again.\" displays above the form.";
 		String verifyString3 = "VP: Error message \"The password confirmation did not match the new password.\" displays next to the confirm password field.";
 		System.out.println(verifyString2);
 		System.out.println(verifyString3);
 		String actualResult1 = reset.getMessageReset();
 		String actualResult2 = reset.getConfirmPasswordErr();
-		Assert.assertEquals(actualResult1, expectedResult1,verifyString2);
-		Assert.assertEquals(actualResult2, expectedResult2, verifyString3);
+		Assert.assertEquals(actualResult1, expectedResult1,"VP: Error message \"Could not reset password. Please correct the errors and try again.\" displays above the form.");
+		Assert.assertEquals(actualResult2, expectedResult2, "VP: Error message \"The password confirmation did not match the new password.\" displays next to the confirm password field.");
 	}
 }

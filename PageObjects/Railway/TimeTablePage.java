@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
-import Constant.Tab;
+import Constant.PageTitle;
 import Constant.TableHeader;
 
 public class TimeTablePage extends GeneralPage{
@@ -25,9 +25,10 @@ public class TimeTablePage extends GeneralPage{
 		String xpath = String.format(xpathCheckPrice,indexNumber, header.getValue());
 		Utilities.click(By.xpath(xpath));
 		if(header == TableHeader.CHECK_PRICE) {
-			Utilities.waitForTabFullyLoad(Tab.TICKETPRICE);
+			Utilities.waitForPageFullyLoad(PageTitle.TICKET_PRICE);
 			return (T) new TicketPricePage();
 		}
+		Utilities.waitForPageFullyLoad(PageTitle.BOOK_TICKET);
 		return (T) new BookTicketPage();
 	}
 	

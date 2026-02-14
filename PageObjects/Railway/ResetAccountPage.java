@@ -13,17 +13,12 @@ public class ResetAccountPage extends GeneralPage {
 	private final By _lblConfirmPassword = By.xpath("//li[@class='confirm-password']//label[@class='validation-error']");
 	
 	
-	public void enterPassword(String password) {
+	public void resetPassWord(String password,String confirmPassword) {
 		Utilities.enter(_txtNewPassword, password);
-	}
-	
-	public void enterConfirmPassword(String confirmPassword) {
 		Utilities.enter(_txtConfirmPassword, confirmPassword);
-	}
-	
-	public void clickSubmitButton() {
 		Utilities.click(_btnSubmitReset);
 	}
+	
 	
 	public String getMessageReset() {
 		return Utilities.getTextElement(_txtMessageReset);

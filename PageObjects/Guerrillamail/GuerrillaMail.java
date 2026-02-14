@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Common.Utilities;
 import Constant.Constant;
+import Constant.PageTitle;
 import DataObjects.UserInfo;
 
 public class GuerrillaMail {
@@ -64,12 +65,12 @@ public class GuerrillaMail {
 		Utilities.click(_editButton);
 		Utilities.enter(_txtMail, userInfo.getUserName());
 		Utilities.click(_setButton);
-		Utilities.waitForPageFullyLoad();
 	}
 	
 	public void waitAndClickConfirmEmail() {
 		Utilities.click(_mailconfirmLink);
 		Utilities.click(_confirmLink);
+		Utilities.waitForPageFullyLoad(PageTitle.REGISTER_CONFIRM);
 	}
 	
 	

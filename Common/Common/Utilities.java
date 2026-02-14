@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Constant.Constant;
-import Constant.Tab;
+import Constant.PageTitle;
 
 public class Utilities {
 	
@@ -56,22 +56,12 @@ public class Utilities {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
-	public static void waitForPageFullyLoad() {
-	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
-	    wait.until(ExpectedConditions.jsReturnsValue("return document.readyState == 'complete'"));
-	}
-	public static void waitForTabFullyLoad(Tab tab) {
+	public static void waitForPageFullyLoad(PageTitle page) {
 	    WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(3));
 	    try {
-	    	
-	    	if(tab == Tab.HOME || tab == Tab.LOGOUT) {
-		    	wait.until(ExpectedConditions.titleIs("Safe Railway"));
-		    }else {
-		    	wait.until(ExpectedConditions.titleContains(tab.getValue()));
-		    }
-			
+	    	wait.until(ExpectedConditions.titleIs(page.getValue()));
 		} catch (Exception e) {
-			// TODO: handle exception
+			return;
 		}
 	}
 	public static void waitForNewState(WebElement element) {
@@ -83,11 +73,11 @@ public class Utilities {
 		}
 	}
 	
-	public static void closeAllTabsExceptMain(String tabtitle) {
+	public static void closeAllTabsExceptMain(PageTitle page) {
 	    for (String handle : Constant.WEBDRIVER.getWindowHandles()) {
 	        Constant.WEBDRIVER.switchTo().window(handle);
-	        Utilities.waitForTabFullyLoad(Tab.REGISTER);
-	        if(!Constant.WEBDRIVER.getTitle().contains(tabtitle)) {
+	        Utilities.waitForPageFullyLoad(page);
+	        if(!Constant.WEBDRIVER.getTitle().equals(page.getValue())) {
 	        	Constant.WEBDRIVER.close();
 	        }
 	    }

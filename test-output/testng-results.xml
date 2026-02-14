@@ -1,209 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="11" failed="5" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-12T15:18:23 ICT" name="Suite" finished-at="2026-02-12T15:25:56 ICT" duration-ms="453701">
+  <suite started-at="2026-02-14T22:17:36 ICT" name="Suite" finished-at="2026-02-14T22:19:46 ICT" duration-ms="130210">
     <groups>
     </groups>
-    <test started-at="2026-02-12T15:18:23 ICT" name="Railway Exercise" finished-at="2026-02-12T15:25:56 ICT" duration-ms="453701">
-      <class name="TestPackage.CreateAccountTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:21 ICT" name="beforeMethod" finished-at="2026-02-12T15:19:22 ICT" duration-ms="757" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC7()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:22 ICT" name="TC7" description="User can&#039;t create account with an already in-use email" finished-at="2026-02-12T15:19:27 ICT" duration-ms="4792" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC7 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:27 ICT" name="afterMethod" finished-at="2026-02-12T15:19:27 ICT" duration-ms="144" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:27 ICT" name="beforeMethod" finished-at="2026-02-12T15:19:28 ICT" duration-ms="753" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC8()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:28 ICT" name="TC8" description="User can&#039;t create account while password and PID fields are empty" finished-at="2026-02-12T15:19:33 ICT" duration-ms="5345" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC8 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:33 ICT" name="afterMethod" finished-at="2026-02-12T15:19:33 ICT" duration-ms="150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:33 ICT" name="beforeMethod" finished-at="2026-02-12T15:19:34 ICT" duration-ms="741" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC9()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:19:34 ICT" name="TC9" description="User create and activate account" finished-at="2026-02-12T15:20:04 ICT" duration-ms="29777" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC9 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3d285d7e]" started-at="2026-02-12T15:20:04 ICT" name="afterMethod" finished-at="2026-02-12T15:20:04 ICT" duration-ms="310" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.CreateAccountTest -->
-      <class name="TestPackage.BookTicketTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:22:11 ICT" name="beforeMethod" finished-at="2026-02-12T15:22:12 ICT" duration-ms="1152" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC12()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:22:12 ICT" name="TC12" description="User can book 1 ticket at a time" finished-at="2026-02-12T15:22:52 ICT" duration-ms="40140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC12 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:22:52 ICT" name="afterMethod" finished-at="2026-02-12T15:22:52 ICT" duration-ms="258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:22:52 ICT" name="beforeMethod" finished-at="2026-02-12T15:22:53 ICT" duration-ms="773" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC13()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:22:53 ICT" name="TC13" description="User can book many tickets at a time" finished-at="2026-02-12T15:23:35 ICT" duration-ms="42144" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC13 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:23:35 ICT" name="afterMethod" finished-at="2026-02-12T15:23:35 ICT" duration-ms="224" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:23:35 ICT" name="beforeMethod" finished-at="2026-02-12T15:23:36 ICT" duration-ms="742" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC14()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:23:36 ICT" name="TC14" description="User can check price of ticket from Timetable" finished-at="2026-02-12T15:24:12 ICT" duration-ms="36078" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC14 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:24:12 ICT" name="afterMethod" finished-at="2026-02-12T15:24:12 ICT" duration-ms="250" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:24:12 ICT" name="beforeMethod" finished-at="2026-02-12T15:24:13 ICT" duration-ms="741" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC15()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:24:13 ICT" name="TC15" description="User can book ticket from Timetable" finished-at="2026-02-12T15:24:51 ICT" duration-ms="38063" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Cannot locate option with text: 2/13/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 2/13/2026
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.40.0', revision: 'b3333f1'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:400)
-at org.openqa.selenium.support.ui.Select.selectByContainsVisibleText(Select.java:151)
-at Railway.BookTicketPage.select(BookTicketPage.java:63)
-at Railway.BookTicketPage.bookTicket(BookTicketPage.java:78)
-at TestPackage.BookTicketTest.TC15(BookTicketTest.java:197)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC15 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.BookTicketTest@2cd76f31]" started-at="2026-02-12T15:24:51 ICT" name="afterMethod" finished-at="2026-02-12T15:24:52 ICT" duration-ms="258" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.BookTicketTest -->
+    <test started-at="2026-02-14T22:17:36 ICT" name="Railway Exercise" finished-at="2026-02-14T22:19:46 ICT" duration-ms="130210">
       <class name="TestPackage.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:20:04 ICT" name="beforeMethod" finished-at="2026-02-12T15:20:05 ICT" duration-ms="788" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:17:36 ICT" name="beforeMethod" finished-at="2026-02-14T22:17:44 ICT" duration-ms="7933" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10()[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:20:05 ICT" name="TC10" description="Reset password shows error if the new password is same as current" finished-at="2026-02-12T15:21:06 ICT" duration-ms="61692" status="FAIL">
+        <test-method signature="TC10()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:17:44 ICT" name="TC10" description="Reset password shows error if the new password is same as current" finished-at="2026-02-14T22:18:40 ICT" duration-ms="55891" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[VP: Message "The new password cannot be the same with the current password" is shown expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]]]>
@@ -215,7 +30,7 @@ at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.ResetPasswordTest.TC10(ResetPasswordTest.java:67)
+at TestPackage.ResetPasswordTest.TC10(ResetPasswordTest.java:64)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -248,291 +63,22 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC10 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:21:06 ICT" name="afterMethod" finished-at="2026-02-12T15:21:07 ICT" duration-ms="227" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:21:07 ICT" name="beforeMethod" finished-at="2026-02-12T15:21:08 ICT" duration-ms="838" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:18:40 ICT" name="beforeMethod" finished-at="2026-02-14T22:18:48 ICT" duration-ms="8304" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chrome]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:21:08 ICT" name="TC11" description="Reset password shows error if the new password and confirm password doesn&#039;t match" finished-at="2026-02-12T15:22:10 ICT" duration-ms="62964" status="PASS">
+        <test-method signature="TC11()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:18:48 ICT" name="TC11" description="Reset password shows error if the new password and confirm password doesn&#039;t match" finished-at="2026-02-14T22:19:46 ICT" duration-ms="57938" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC11 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.ResetPasswordTest@40005471]" started-at="2026-02-12T15:22:10 ICT" name="afterMethod" finished-at="2026-02-12T15:22:11 ICT" duration-ms="259" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
       </class> <!-- TestPackage.ResetPasswordTest -->
-      <class name="TestPackage.CancelBookingTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CancelBookingTest@367ffa75]" started-at="2026-02-12T15:24:52 ICT" name="beforeMethod" finished-at="2026-02-12T15:24:52 ICT" duration-ms="772" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC16()[pri:0, instance:TestPackage.CancelBookingTest@367ffa75]" started-at="2026-02-12T15:24:52 ICT" name="TC16" description="Cancel booking" finished-at="2026-02-12T15:25:56 ICT" duration-ms="63775" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[VP: The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: VP: The canceled ticket is disappeared did not expect [Quảng Ngãi] but found [Quảng Ngãi]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failEquals(Assert.java:1594)
-at org.testng.Assert.assertNotEqualsImpl(Assert.java:157)
-at org.testng.Assert.assertNotEquals(Assert.java:2217)
-at TestPackage.CancelBookingTest.TC16(CancelBookingTest.java:62)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC16 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CancelBookingTest@367ffa75]" started-at="2026-02-12T15:25:56 ICT" name="afterMethod" finished-at="2026-02-12T15:25:56 ICT" duration-ms="221" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.CancelBookingTest -->
-      <class name="TestPackage.LoginTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:23 ICT" name="beforeMethod" finished-at="2026-02-12T15:18:24 ICT" duration-ms="1425" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC1()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:24 ICT" name="TC1" description="TC1: User can log into Railway with valid username and password" finished-at="2026-02-12T15:18:31 ICT" duration-ms="6703" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC1 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:31 ICT" name="afterMethod" finished-at="2026-02-12T15:18:31 ICT" duration-ms="198" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:31 ICT" name="beforeMethod" finished-at="2026-02-12T15:18:32 ICT" duration-ms="920" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC2()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:32 ICT" name="TC2" description="User cannot login with blank &quot;Username&quot; textbox" finished-at="2026-02-12T15:18:39 ICT" duration-ms="7315" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC2 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:39 ICT" name="afterMethod" finished-at="2026-02-12T15:18:39 ICT" duration-ms="253" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:39 ICT" name="beforeMethod" finished-at="2026-02-12T15:18:40 ICT" duration-ms="759" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC3()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:40 ICT" name="TC3" description="User cannot log into Railway with invalid password." finished-at="2026-02-12T15:18:47 ICT" duration-ms="6635" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Verify that Error message "There was a problem with your login and/or errors exist in your form." is displayed expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Verify that Error message "There was a problem with your login and/or errors exist in your form." is displayed expected [There was a problem with your login and/or errors exist in your form.] but found [Invalid username or password. Please try again.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.LoginTest.TC3(LoginTest.java:85)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC3 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:47 ICT" name="afterMethod" finished-at="2026-02-12T15:18:47 ICT" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:47 ICT" name="beforeMethod" finished-at="2026-02-12T15:18:48 ICT" duration-ms="770" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC4()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:18:48 ICT" name="TC4" description="System shows message when user enters wrong password many times" finished-at="2026-02-12T15:19:04 ICT" duration-ms="16618" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[VP: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes." appears. expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: VP: User can't login and message "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes." appears. expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.LoginTest.TC4(LoginTest.java:118)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC4 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:19:04 ICT" name="afterMethod" finished-at="2026-02-12T15:19:05 ICT" duration-ms="211" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:19:05 ICT" name="beforeMethod" finished-at="2026-02-12T15:19:06 ICT" duration-ms="808" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC5()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:19:06 ICT" name="TC5" description="User can&#039;t login with an account hasn&#039;t been activated" finished-at="2026-02-12T15:19:12 ICT" duration-ms="6814" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC5 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LoginTest@36ebc363]" started-at="2026-02-12T15:19:12 ICT" name="afterMethod" finished-at="2026-02-12T15:19:13 ICT" duration-ms="196" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.LoginTest -->
-      <class name="TestPackage.LogoutTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.LogoutTest@302552ec]" started-at="2026-02-12T15:19:13 ICT" name="beforeMethod" finished-at="2026-02-12T15:19:13 ICT" duration-ms="757" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="TC6()[pri:0, instance:TestPackage.LogoutTest@302552ec]" started-at="2026-02-12T15:19:13 ICT" name="TC6" description="User is redirected to Home page after logging out" finished-at="2026-02-12T15:19:21 ICT" duration-ms="7735" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC6 -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.LogoutTest@302552ec]" started-at="2026-02-12T15:19:21 ICT" name="afterMethod" finished-at="2026-02-12T15:19:21 ICT" duration-ms="159" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- TestPackage.LogoutTest -->
     </test> <!-- Railway Exercise -->
   </suite> <!-- Suite -->
 </testng-results>

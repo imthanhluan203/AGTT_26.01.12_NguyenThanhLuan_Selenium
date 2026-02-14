@@ -2,6 +2,7 @@ package TestPackage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 import DataObjects.UserInfo;
 import Railway.FAQPage;
@@ -20,16 +21,16 @@ public class LogoutTest extends BaseTest {
 		home.open();
 		
 		System.out.println("2. Login with valid Email and Password");		
-		LoginPage loginPage = home.gotoPage(Tab.LOGIN,LoginPage.class);
+		LoginPage loginPage = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN,LoginPage.class);
 		
 		System.out.println(Constant.WEBDRIVER.getTitle());
 		GeneralPage myPage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Click on \"FAQ\" tab");		
-		FAQPage faqPage = myPage.gotoPage(Tab.FAQ, FAQPage.class);
+		FAQPage faqPage = myPage.gotoPage(Tab.FAQ, PageTitle.FAQ,FAQPage.class);
 		
 		System.out.println("4. Click on \"Log out\" tab");		
-		faqPage.gotoPage(Tab.LOGOUT, HomePage.class);
+		faqPage.gotoPage(Tab.LOGOUT,PageTitle.HOME, HomePage.class);
 		
 		System.out.println("VP: Verify that Home page displays \"Log out\" tab is disappeared.");	
 		Assert.assertTrue(!home.checkTabPageExist(Tab.LOGOUT), "VP: Verify that Home page displays \"Log out\" tab is disappeared.");

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.Tab;
 import Constant.TableHeader;
 import Constant.SeatType;
@@ -36,11 +37,11 @@ public class BookTicketTest extends BaseTest {
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account.");
-		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN,PageTitle.LOGIN, LoginPage.class);
 		homePage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Click on \"Book ticket\" tab.");
-		BookTicketPage bookTicketPage = homePage.gotoPage(Tab.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = homePage.gotoPage(Tab.BOOKTICKET,PageTitle.BOOK_TICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 2 days from \"Depart date\"");
 		System.out.println("5. Select Depart from \"Nha Trang\" and Arrive at \"Huế\"");
