@@ -4,12 +4,35 @@
   <test thread-count="5" name="Railway Exercise(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
+      <class name="TestPackage.BookTicketTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="TC15"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- TestPackage.BookTicketTest -->
+      <class name="TestPackage.CancelBookingTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="TC16"/>
+        </methods>
+      </class> <!-- TestPackage.CancelBookingTest -->
       <class name="TestPackage.ResetPasswordTest">
         <methods>
           <include name="beforeMethod"/>
+          <include name="afterMethod"/>
           <include name="TC10"/>
         </methods>
       </class> <!-- TestPackage.ResetPasswordTest -->
+      <class name="TestPackage.LoginTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="TC4"/>
+          <include name="TC3"/>
+        </methods>
+      </class> <!-- TestPackage.LoginTest -->
     </classes>
   </test> <!-- Railway Exercise(failed) -->
 </suite> <!-- Failed suite [Suite] -->

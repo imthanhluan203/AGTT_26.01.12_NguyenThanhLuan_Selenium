@@ -2,6 +2,7 @@ package Railway;
 import org.openqa.selenium.By;
 
 import Common.Utilities;
+import Constant.Constant;
 import Constant.PageTitle;
 import Constant.Tab;
 import DataObjects.UserInfo;
@@ -33,15 +34,16 @@ public class LoginPage extends GeneralPage {
 	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(UserInfo myUser) {
+		Utilities.scrollToElement(_btnLogin);
 		Utilities.enter(_txtUsername, myUser.getName());
 		Utilities.enter(_txtPassword, myUser.getPassword());
 		Utilities.click(_btnLogin);
-		try {
-			Utilities.waitForPageFullyLoad(PageTitle.HOME);
+		Utilities.waitForPageFullyLoad(PageTitle.HOME);
+		if(Constant.WEBDRIVER.getTitle().equals(PageTitle.HOME.getValue())) {
 			return (T) new HomePage();
-		} catch (Exception e) {
-			return (T) this;
 		}
+		return (T) this;
+		
 	}
 
 }

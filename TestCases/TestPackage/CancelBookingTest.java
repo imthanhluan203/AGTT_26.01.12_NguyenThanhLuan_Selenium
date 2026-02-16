@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 import Constant.City;
 import Constant.Constant;
+import Constant.PageTitle;
 import Constant.SeatType;
 import Constant.Tab;
 import Constant.TableHeader;
@@ -29,16 +30,16 @@ public class CancelBookingTest extends BaseTest {
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN, PageTitle.LOGIN , LoginPage.class);
 		homePage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Book a ticket");
-		BookTicketPage bookTicketPage = homePage.gotoPage(Tab.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = homePage.gotoPage(Tab.BOOKTICKET,PageTitle.BOOK_TICKET, BookTicketPage.class);
 		bookTicketPage.bookTicket(myTicket);
 		bookTicketPage.submit();
 		
 		System.out.println("4. Click on \"My ticket\" tab");
-		TicketPage ticketPage = bookTicketPage.gotoPage(Tab.MYTICKET, TicketPage.class);
+		TicketPage ticketPage = bookTicketPage.gotoPage(Tab.MYTICKET,PageTitle.MY_TICKET, TicketPage.class);
 		String noOfTicKetDelete = "1";
 		
 		String beforeCancelDepartStation = ticketPage.getCellValue(noOfTicKetDelete, TableHeader.DEPART_STATION);

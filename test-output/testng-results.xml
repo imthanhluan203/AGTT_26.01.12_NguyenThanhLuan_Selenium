@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-14T22:17:36 ICT" name="Suite" finished-at="2026-02-14T22:19:46 ICT" duration-ms="130210">
+  <suite started-at="2026-02-16T09:38:50 ICT" name="Suite" finished-at="2026-02-16T09:39:45 ICT" duration-ms="54782">
     <groups>
     </groups>
-    <test started-at="2026-02-14T22:17:36 ICT" name="Railway Exercise" finished-at="2026-02-14T22:19:46 ICT" duration-ms="130210">
-      <class name="TestPackage.ResetPasswordTest">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:17:36 ICT" name="beforeMethod" finished-at="2026-02-14T22:17:44 ICT" duration-ms="7933" status="PASS">
+    <test started-at="2026-02-16T09:38:50 ICT" name="Railway Exercise" finished-at="2026-02-16T09:39:45 ICT" duration-ms="54782">
+      <class name="TestPackage.CreateAccountTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:38:50 ICT" name="beforeMethod" finished-at="2026-02-16T09:38:55 ICT" duration-ms="4706" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,52 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC10()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:17:44 ICT" name="TC10" description="Reset password shows error if the new password is same as current" finished-at="2026-02-14T22:18:40 ICT" duration-ms="55891" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[VP: Message "The new password cannot be the same with the current password" is shown expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: VP: Message "The new password cannot be the same with the current password" is shown expected [The new password cannot be the same with the current password] but found [Password changed! Click here to login.]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1590)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at TestPackage.ResetPasswordTest.TC10(ResetPasswordTest.java:64)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="TC7()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:38:55 ICT" name="TC7" description="User can&#039;t create account with an already in-use email" finished-at="2026-02-16T09:39:01 ICT" duration-ms="6074" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC10 -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:18:40 ICT" name="beforeMethod" finished-at="2026-02-14T22:18:48 ICT" duration-ms="8304" status="PASS">
+        </test-method> <!-- TC7 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:01 ICT" name="afterMethod" finished-at="2026-02-16T09:39:02 ICT" duration-ms="959" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:02 ICT" name="beforeMethod" finished-at="2026-02-16T09:39:06 ICT" duration-ms="3448" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -74,11 +37,34 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC11()[pri:0, instance:TestPackage.ResetPasswordTest@2b71e916]" started-at="2026-02-14T22:18:48 ICT" name="TC11" description="Reset password shows error if the new password and confirm password doesn&#039;t match" finished-at="2026-02-14T22:19:46 ICT" duration-ms="57938" status="PASS">
+        <test-method signature="TC8()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:06 ICT" name="TC8" description="User can&#039;t create account while password and PID fields are empty" finished-at="2026-02-16T09:39:12 ICT" duration-ms="6240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC11 -->
-      </class> <!-- TestPackage.ResetPasswordTest -->
+        </test-method> <!-- TC8 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:12 ICT" name="afterMethod" finished-at="2026-02-16T09:39:13 ICT" duration-ms="921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:13 ICT" name="beforeMethod" finished-at="2026-02-16T09:39:16 ICT" duration-ms="3418" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="TC9()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:16 ICT" name="TC9" description="User create and activate account" finished-at="2026-02-16T09:39:43 ICT" duration-ms="27021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC9 -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:TestPackage.CreateAccountTest@3754a4bf]" started-at="2026-02-16T09:39:43 ICT" name="afterMethod" finished-at="2026-02-16T09:39:45 ICT" duration-ms="1945" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- TestPackage.CreateAccountTest -->
     </test> <!-- Railway Exercise -->
   </suite> <!-- Suite -->
 </testng-results>

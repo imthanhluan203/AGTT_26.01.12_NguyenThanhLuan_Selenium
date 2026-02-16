@@ -4,14 +4,12 @@
   <test thread-count="5" name="Railway Exercise">
     <parameter name="browser" value="firefox"></parameter>
     <classes>
-    	  <!--<class name="TestPackage.LoginTest"/>
+    	  <class name="TestPackage.LoginTest"/>
 		  <class name="TestPackage.LogoutTest"/>
 		  <class name="TestPackage.CreateAccountTest"/>
 		  <class name="TestPackage.ResetPasswordTest"/>
       	  <class name="TestPackage.BookTicketTest"/>
-		  <class name="TestPackage.CancelBookingTest"/>-->
-		  <class name="TestPackage.ResetPasswordTest"/>
-
+		  <class name="TestPackage.CancelBookingTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

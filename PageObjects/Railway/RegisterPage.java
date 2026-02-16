@@ -40,6 +40,7 @@ public class RegisterPage extends GeneralPage {
 	}
 	
 	public RegisterPage register(UserInfo myInfo)  {
+		Utilities.scrollToElement(_btnSubmit);
 		Utilities.enter(_txtUsername, myInfo.getName());
 		Utilities.enter(_txtPassword, myInfo.getPassword());
 		Utilities.enter(_txtConfirmPassword, myInfo.getPassword());

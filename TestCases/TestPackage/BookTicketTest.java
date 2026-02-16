@@ -82,11 +82,11 @@ public class BookTicketTest extends BaseTest {
 		home.open();
 		
 		System.out.println("2. Login with a valid account ");
-		LoginPage login = home.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage login = home.gotoPage(Tab.LOGIN,PageTitle.LOGIN, LoginPage.class);
 		home = login.login(myUserInfo);
 		
 		System.out.println("3. Click on \"Book ticket\" tab");
-		BookTicketPage bookTicketPage = home.gotoPage(Tab.BOOKTICKET, BookTicketPage.class);
+		BookTicketPage bookTicketPage = home.gotoPage(Tab.BOOKTICKET,PageTitle.BOOK_TICKET, BookTicketPage.class);
 		
 		System.out.println("4. Select the next 25 days from \"Depart date\"");
 		System.out.println("5. Select \"Nha Trang\" for \"Depart from\" and \"Sài Gòn\" for \"Arrive at\".");
@@ -130,11 +130,11 @@ public class BookTicketTest extends BaseTest {
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN,PageTitle.LOGIN, LoginPage.class);
 		homePage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
-		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
+		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE,PageTitle.TIME_TABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on \"check price\" link of the route from \"Đà Nẵng\" to \"Sài Gòn\"");
 		TicketPricePage ticketPrice = timeTablePage.timeTableAction(City.DANANG,City.SAIGON,TableHeader.CHECK_PRICE);
@@ -177,11 +177,11 @@ public class BookTicketTest extends BaseTest {
 		homePage.open();
 		
 		System.out.println("2. Login with a valid account");
-		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN, LoginPage.class);
+		LoginPage loginPage = homePage.gotoPage(Tab.LOGIN,PageTitle.LOGIN, LoginPage.class);
 		homePage = loginPage.login(myUserInfo);
 		
 		System.out.println("3. Click on \"Timetable\" tab");
-		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE, TimeTablePage.class);
+		TimeTablePage timeTablePage = homePage.gotoPage(Tab.TIMETABLE,PageTitle.TIME_TABLE, TimeTablePage.class);
 		
 		System.out.println("4. Click on book ticket of route \"Quảng Ngãi\" to \"Huế\"");
 		BookTicketPage bookTicketPage = timeTablePage.timeTableAction(City.QUANGNGAI, City.HUE, TableHeader.BOOK_TICKET);
