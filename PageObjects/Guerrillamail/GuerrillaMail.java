@@ -12,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Common.Utilities;
 import Constant.Constant;
-import Constant.PageTitle;
 import DataObjects.UserInfo;
+import Enum.PageTitle;
 
 public class GuerrillaMail {
 	

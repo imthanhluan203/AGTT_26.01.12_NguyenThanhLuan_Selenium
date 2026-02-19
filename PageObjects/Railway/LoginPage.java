@@ -1,43 +1,31 @@
 package Railway;
-import org.openqa.selenium.By;
-
+import Common.JsonReader;
 import Common.Utilities;
 import Constant.Constant;
-import Constant.PageTitle;
-import Constant.Tab;
 import DataObjects.UserInfo;
+import Enum.PageTitle;
 
 public class LoginPage extends GeneralPage {
-	private final By _txtUsername = By.xpath("//input[@id='username']");
-	private final By _txtPassword = By.xpath("//input[@id='password']");
-	private final By _btnLogin = By.xpath("//input[@type='submit']");
-	private final By _lblErrorLoginMessage = By.xpath("//p[@class='message error LoginForm']");
-	private final By _linkforgotPassword = By.xpath("//a[text()='Forgot Password page']");
-	private final By _txtEmailReset = By.xpath("//input[@id='email']");
-	private final By _btnSubmitReset = By.xpath("//input[@type='submit']");
-
+	
 	public String getLblErrorLoginMessage() {
-		return Utilities.getTextElement(_lblErrorLoginMessage);
-	}
-	public Boolean isLoggedIn() {
-		return checkTabPageExist(Tab.LOGIN);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.LOGIN, "lblErrorLoginMessage"));
 	}
 	
 	public void clickForgotPassword() {
-		Utilities.click(_linkforgotPassword);
+		Utilities.click(JsonReader.getLocator(PageTitle.LOGIN, "linkforgotPassword"));
 	}
 	
 	public void sendRequestReset(String input) {
-		Utilities.enter(_txtEmailReset, input);
-		Utilities.click(_btnSubmitReset);
+		Utilities.enter(JsonReader.getLocator(PageTitle.LOGIN, "txtEmailReset"), input);
+		Utilities.click(JsonReader.getLocator(PageTitle.LOGIN, "btnSubmitReset"));
 	}
 	
 	@SuppressWarnings("unchecked")
 	public <T extends GeneralPage> T login(UserInfo myUser) {
-		Utilities.scrollToElement(_btnLogin);
-		Utilities.enter(_txtUsername, myUser.getName());
-		Utilities.enter(_txtPassword, myUser.getPassword());
-		Utilities.click(_btnLogin);
+		Utilities.scrollToElement(JsonReader.getLocator(PageTitle.LOGIN, "btnLogin"));
+		Utilities.enter(JsonReader.getLocator(PageTitle.LOGIN, "txtUsername"), myUser.getName());
+		Utilities.enter(JsonReader.getLocator(PageTitle.LOGIN, "txtPassword"), myUser.getPassword());
+		Utilities.click(JsonReader.getLocator(PageTitle.LOGIN, "btnLogin"));		
 		Utilities.waitForPageFullyLoad(PageTitle.HOME);
 		if(Constant.WEBDRIVER.getTitle().equals(PageTitle.HOME.getValue())) {
 			return (T) new HomePage();

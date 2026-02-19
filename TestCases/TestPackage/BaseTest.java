@@ -9,9 +9,9 @@ import org.testng.annotations.Parameters;
 
 import Common.Utilities;
 import Constant.Constant;
-import Constant.PageTitle;
-import Constant.Tab;
 import DataObjects.UserInfo;
+import Enum.PageTitle;
+import Enum.Tab;
 import Guerrillamail.GuerrillaMail;
 import Railway.HomePage;
 import Railway.RegisterPage;

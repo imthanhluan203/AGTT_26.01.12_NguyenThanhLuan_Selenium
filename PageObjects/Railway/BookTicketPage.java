@@ -3,36 +3,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import Common.JsonReader;
 import Common.Utilities;
-import Constant.BookTicketFormField;
 import Constant.Constant;
-import Constant.PageTitle;
-import Constant.TableHeader;
 import DataObjects.Ticket;
+import Enum.BookTicketFormField;
+import Enum.PageTitle;
+import Enum.TableHeader;
 
 public class BookTicketPage extends GeneralPage {
 	
-	private String _dynamicXpathFormField = "//select[@name='%s']";
-	private String _dynamicXpathBookTicketPage = "(//tr[th[text()='%s']]//following-sibling::tr//td)[count(//tr//th[text()='%s']//preceding-sibling::th) + 1]";
-
-	private final By _btnSubmit = By.xpath("//input[@type='submit']");
-	private final By _txtMessage = By.xpath("//h1[text()='Ticket booked successfully!']");
-	private final By _txtDepartStation = By.xpath("//select[@name='DepartStation']/option[@selected]");
-	private final By _txtArriveStation = By.xpath("//select[@name='ArriveStation']/option[@selected]");
-	
-	
 	public String getDepartionText() {
-		return Utilities.getTextElement(_txtDepartStation);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.BOOK_TICKET, "txtDepartStation"));
 	}
 	
 	public String getArriveAtText() {
-		return Utilities.getTextElement(_txtArriveStation);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.BOOK_TICKET, "txtArriveStation"));
 	}
 		
 	public void select(BookTicketFormField field, String value) {
-	    String xpath = String.format(_dynamicXpathFormField, field.getValue());
-	    Utilities.scrollToElement(By.xpath(xpath));
-	    new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)))
+	    By locator = JsonReader.getLocator(PageTitle.BOOK_TICKET, "dynamicXpathFormField", field.getValue());
+	    Utilities.scrollToElement(locator);
+	    new Select(Constant.WEBDRIVER.findElement(locator))
 	        .selectByVisibleText(value);
 	}
 	
@@ -40,9 +32,9 @@ public class BookTicketPage extends GeneralPage {
         if(field != BookTicketFormField.DEPART_DATE) {
         	return "";
         }
-    	String xpath = String.format(_dynamicXpathFormField, field.getValue());
-    	Utilities.scrollToElement(By.xpath(xpath));
-        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
+        By locator = JsonReader.getLocator(PageTitle.BOOK_TICKET, "dynamicXpathFormField", field.getValue());
+    	Utilities.scrollToElement(locator);
+        Select mySelect = new Select(Constant.WEBDRIVER.findElement(locator));
         String currentSelect = mySelect.getFirstSelectedOption().getText();
 		long julianDay = Utilities.parseDateToJulian(currentSelect);
 		String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
@@ -54,9 +46,9 @@ public class BookTicketPage extends GeneralPage {
 		if(field != BookTicketFormField.DEPART_DATE) {
 			return "";
 		}
-		String xpath = String.format(_dynamicXpathFormField, field.getValue());
-		Utilities.scrollToElement(By.xpath(xpath));
-        Select mySelect = new Select(Constant.WEBDRIVER.findElement(By.xpath(xpath)));
+		By locator = JsonReader.getLocator(PageTitle.BOOK_TICKET, "dynamicXpathFormField", field.getValue());
+		Utilities.scrollToElement(locator);
+        Select mySelect = new Select(Constant.WEBDRIVER.findElement(locator));
         System.out.println(yourDay);
         long julianDay = Utilities.parseDateToJulian(yourDay);
 		String afterSelect = Utilities.parseJulianToDate(julianDay + duration);
@@ -66,12 +58,12 @@ public class BookTicketPage extends GeneralPage {
 	}
 	
 	public void submit() {
-		Utilities.click(_btnSubmit);
+		Utilities.click(JsonReader.getLocator(PageTitle.BOOK_TICKET, "btnSubmit"));
 		Utilities.waitForPageFullyLoad(PageTitle.MY_TICKET);
 	}
 	
 	public String getBookTicketMessage() {
-		return Utilities.getTextElement(_txtMessage);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.BOOK_TICKET, "txtMessage"));
 	}
 	
 	public String bookTicket(Ticket myTicket,String... yourday) {
@@ -81,10 +73,10 @@ public class BookTicketPage extends GeneralPage {
 		}else {
 			departDate = this.select(BookTicketFormField.DEPART_DATE, myTicket.getDuration());
 		}
-		String xpath = String.format("//select[@name='%s']",BookTicketFormField.ARRIVE_AT.getValue());
+		By arriveLocator = JsonReader.getLocator(PageTitle.BOOK_TICKET, "dynamicXpathFormField", BookTicketFormField.ARRIVE_AT.getValue());
 		
 		if(!myTicket.getDepartFrom().isEmpty()) {
-			WebElement element = Constant.WEBDRIVER.findElement(By.xpath(xpath));
+			WebElement element = Constant.WEBDRIVER.findElement(arriveLocator);
 			this.select(BookTicketFormField.DEPART_FROM, myTicket.getDepartFrom());
 			Utilities.waitForNewState(element);
 		}
@@ -105,8 +97,7 @@ public class BookTicketPage extends GeneralPage {
 	}
 	
 	public String getTextFieldBookedTicket(TableHeader field) {
-		String myXpath = String.format(_dynamicXpathBookTicketPage, field.getValue(),field.getValue());
-		return Utilities.getTextElement(By.xpath(myXpath));
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.BOOK_TICKET, "dynamicXpathBookedTicketTable", field.getValue()));
 	}
 	
 	

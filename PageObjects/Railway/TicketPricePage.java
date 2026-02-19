@@ -1,21 +1,18 @@
 package Railway;
 
-import org.openqa.selenium.By;
-
+import Common.JsonReader;
 import Common.Utilities;
-import Constant.SeatType;
+import Enum.PageTitle;
+import Enum.SeatType;
 
 public class TicketPricePage extends GeneralPage {
-	private final By _txtTableName = By.xpath("//table[@class='MyTable MedTable']//tr[@class='TableSmallHeader']//th[contains(text(), 'Ticket price from')]");	
-	private String price = "(//tr[td[text()='%s']]//following-sibling::tr//td)[count(//tr[td[text()='%s']]//td[text()='%s']//preceding-sibling::td) + 1]";
 	
 	public String getPrice(SeatType type) {
-		String xpath = String.format(price, type,type,type);
-		return Utilities.getTextElement(By.xpath(xpath));
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.TICKET_PRICE, "dynamicXpathPriceBySeat", type));
 	}
 	
 	public String getTableName() {
-		return Utilities.getTextElement(_txtTableName);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.TICKET_PRICE, "txtTableName"));
 	}
 	
 }

@@ -1,4 +1,4 @@
-package Constant;
+package Enum;
 
 public enum City {
 	SAIGON("Sài Gòn"),

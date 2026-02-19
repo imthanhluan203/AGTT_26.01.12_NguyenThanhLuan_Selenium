@@ -1,4 +1,4 @@
-package Constant;
+package Enum;
 
 public enum Tab {
 	HOME("Home"),

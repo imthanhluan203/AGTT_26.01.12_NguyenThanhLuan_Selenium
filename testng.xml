@@ -10,6 +10,7 @@
 		  <class name="TestPackage.ResetPasswordTest"/>
       	  <class name="TestPackage.BookTicketTest"/>
 		  <class name="TestPackage.CancelBookingTest"/>
+		  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

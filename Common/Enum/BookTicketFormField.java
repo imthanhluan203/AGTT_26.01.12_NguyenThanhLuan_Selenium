@@ -1,4 +1,4 @@
-package Constant;
+package Enum;
 
 public enum BookTicketFormField {
 	DEPART_DATE("Date"),

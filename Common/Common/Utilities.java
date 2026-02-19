@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Constant.Constant;
-import Constant.PageTitle;
+import Enum.PageTitle;
 
 public class Utilities {
 	
@@ -36,11 +36,21 @@ public class Utilities {
 	
 	public static String getTextElement(By locator) {
 		WebElement element = Utilities.waitForElementLocated(locator);
+		scrollToElement(element);
 		return element.getText();
+	}
+	
+	public static String getTextElementByJS(By locator) {
+		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, Duration.ofSeconds(Constant.TIMEOUT_WAIT_SECOND));
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));;
+		String text = (String) ((JavascriptExecutor) Constant.WEBDRIVER).executeScript("return arguments[0].innerText;", element);
+		return text.strip();
 	}
 	
 	public static String getValueElement(By locator) {
 		WebElement element = Utilities.waitForElementLocated(locator);
+		scrollToElement(element);
 		return element.getAttribute("value");
 	}
 	

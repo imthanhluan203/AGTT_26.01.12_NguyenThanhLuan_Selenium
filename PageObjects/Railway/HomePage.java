@@ -1,14 +1,10 @@
 package Railway;
-
-import org.openqa.selenium.By;
-
+import Common.JsonReader;
 import Common.Utilities;
 import Constant.Constant;
+import Enum.PageTitle;
 
-public class HomePage extends GeneralPage {
-	private final By _txtWelcomeMessage = By.xpath("//div[@class='account']");
-	private final By _linkCreateAccount = By.xpath("//a[text()='create an account']");
-	
+public class HomePage extends GeneralPage {	
 	
 	public HomePage open() {
 		Constant.WEBDRIVER.navigate().to(Constant.RAILWAY_URL);
@@ -16,11 +12,11 @@ public class HomePage extends GeneralPage {
 	}
 	
 	public String getWelcomeMessage() {
-		return Utilities.getTextElement(_txtWelcomeMessage);
+		return Utilities.getTextElementByJS(JsonReader.getLocator(PageTitle.HOME, "txtWelcomeMessage"));
 	}
 	
 	public RegisterPage getCreateAccountPage() {
-		Utilities.click(_linkCreateAccount);
+		Utilities.click(JsonReader.getLocator(PageTitle.HOME, "linkCreateAccount"));
 		return new RegisterPage();
 	}
 	

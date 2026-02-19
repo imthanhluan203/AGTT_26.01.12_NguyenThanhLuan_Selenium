@@ -1,4 +1,4 @@
-package Constant;
+package Enum;
 
 public enum TableHeader {
 	DEPART_STATION("Depart Station"),

@@ -1,7 +1,7 @@
 package DataObjects;
 
-import Constant.City;
-import Constant.SeatType;
+import Enum.City;
+import Enum.SeatType;
 
 public class Ticket {
 	private String departDate;

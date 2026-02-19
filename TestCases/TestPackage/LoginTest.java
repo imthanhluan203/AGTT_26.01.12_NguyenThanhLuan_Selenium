@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import Constant.Constant;
-import Constant.PageTitle;
-import Constant.Tab;
 import DataObjects.UserInfo;
+import Enum.PageTitle;
+import Enum.Tab;
 import Railway.HomePage;
 import Railway.LoginPage;
 

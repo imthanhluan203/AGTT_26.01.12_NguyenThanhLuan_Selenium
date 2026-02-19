@@ -1,35 +1,27 @@
 package Railway;
 
-import org.openqa.selenium.By;
-
+import Common.JsonReader;
 import Common.Utilities;
+import Enum.PageTitle;
 
-public class ResetAccountPage extends GeneralPage {
-	private final By _txtNewPassword = By.xpath("//input[@id='newPassword']");
-	private final By _txtConfirmPassword = By.xpath("//input[@id='confirmPassword']");
-	private final By _btnSubmitReset = By.xpath("//input[@value='Reset Password']");
-	private final By _txtMessageReset = By.xpath("//p[contains(@class,'message')]");
-	private final By _txtResetToken = By.xpath("//input[@id='resetToken']");
-	private final By _lblConfirmPassword = By.xpath("//li[@class='confirm-password']//label[@class='validation-error']");
-	
+public class ResetAccountPage extends GeneralPage {	
 	
 	public void resetPassWord(String password,String confirmPassword) {
-		Utilities.enter(_txtNewPassword, password);
-		Utilities.enter(_txtConfirmPassword, confirmPassword);
-		Utilities.click(_btnSubmitReset);
+		Utilities.enter(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "txtNewPassword"), password);
+		Utilities.enter(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "txtConfirmPassword"), confirmPassword);
+		Utilities.click(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "btnSubmitReset"));
 	}
 	
-	
 	public String getMessageReset() {
-		return Utilities.getTextElement(_txtMessageReset);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "txtMessageReset"));
 	}
 	
 	public String getResetoken() {
-		return Utilities.getValueElement(_txtResetToken);
+		return Utilities.getValueElement(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "txtResetToken"));
 	}
 	
 	public String getConfirmPasswordErr() {
-		return Utilities.getTextElement(_lblConfirmPassword);
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.RESET_PASSWORD, "lblConfirmPassword"));
 	}
 	
 }

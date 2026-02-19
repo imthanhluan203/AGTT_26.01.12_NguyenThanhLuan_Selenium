@@ -1,4 +1,4 @@
-package Constant;
+package Enum;
 
 public enum SeatType {
 	HS("Hard seat"),

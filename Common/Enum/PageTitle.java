@@ -1,6 +1,7 @@
-package Constant;
+package Enum;
 
 public enum PageTitle {
+	GENERAL("Safe Railway: General"),
 	HOME("Safe Railway"),
 	FAQ("Safe Railway - FAQ"),
 	CONTACT("Safe Railway"),

@@ -1,25 +1,20 @@
 package Railway;
 
-import org.openqa.selenium.By;
-
+import Common.JsonReader;
 import Common.Utilities;
 import Constant.Constant;
-import Constant.TableHeader;
+import Enum.PageTitle;
+import Enum.TableHeader;
 
 public class TicketPage extends GeneralPage {
-	private By xpathManageTicket = By.xpath("//h1[text() = 'Manage ticket']");
-	private String dynamicCancelXpath = "//tr[td[text()='%s']]//input[@value='Cancel']";
-	private String dynamicXpathIndexOfHeaderTable = "(//tr[td[text()='%s']])//td[count(//tr[th[text()='%s']]//following-sibling::th[text()='%s']//preceding-sibling::th) + 1]";
 	
 	public String getCellValue(String noOfTicket, TableHeader typeOfData) {
-		Utilities.waitForElementLocated(xpathManageTicket);
-		String xpath = String.format(dynamicXpathIndexOfHeaderTable, noOfTicket, typeOfData.getValue(), typeOfData.getValue());
-		return Utilities.getTextElement(By.xpath(xpath));
+		Utilities.waitForElementLocated(JsonReader.getLocator(PageTitle.MY_TICKET, "lblTicketHeader"));
+		return Utilities.getTextElement(JsonReader.getLocator(PageTitle.MY_TICKET, "dynamicXpathCellValueOfTable", noOfTicket, typeOfData.getValue()));
 	}
 	
 	public void clickCancelButton(String noOfTicket) {
-		By xpath = By.xpath(String.format(dynamicCancelXpath, noOfTicket));
-		Utilities.click(xpath);
+		Utilities.click(JsonReader.getLocator(PageTitle.MY_TICKET, "dynamicXpathCancel", noOfTicket));
 	}
 	public void clickOke() {
 		Constant.WEBDRIVER.switchTo().alert().accept();
