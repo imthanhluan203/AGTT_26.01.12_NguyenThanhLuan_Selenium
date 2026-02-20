@@ -16,7 +16,8 @@ public enum PageTitle {
 	TICKET_PRICE("Safe Railway - Ticket Price"),
 	REGISTER_THANK("Safe Railway - Thanks for registering"),
 	REGISTER_CONFIRM("Safe Railway - Registration Confirmation Page"),
-	RESET_PASSWORD("Safe Railway - Password Reset");
+	RESET_PASSWORD("Safe Railway - Password Reset"),
+	GUERRILLA_MAIL("Guerrilla Mail - Disposable Temporary E-Mail Address");
 	private final String value; 
 	PageTitle(String value) {
         this.value = value;

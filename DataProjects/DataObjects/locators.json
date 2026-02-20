@@ -1,4 +1,15 @@
 {
+"Guerrilla Mail - Disposable Temporary E-Mail Address":
+	{
+		"txtMail" : "//span[@id='inbox-id']/input",
+		"btnEdit" : "//span[@class='editable button']",
+		"btnSetMail" : "//button[text()='Set']",
+		"btnDelete" : "//input[@value='Delete']",
+		"linkMailconfirm": "//td[contains(text(),'thanhletraining03@gmail.com')]",
+		"linkConfirm" : "//div[@class='email_body']//a",
+		"checkboxMail" : "//input[@type='checkbox']"
+	}
+,
 "Safe Railway: General": 
 	{
 		"dynamicTabXpath" : "//a/span[contains(text(),'%s')]" 
