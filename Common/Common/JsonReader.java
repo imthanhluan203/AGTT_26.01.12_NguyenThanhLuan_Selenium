@@ -1,6 +1,8 @@
 package Common;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 
@@ -10,20 +12,22 @@ import tools.jackson.databind.ObjectMapper;
 
 public class JsonReader {
 	private static JsonNode ROOTNODE;
+	private static Map<String,Map<String,String>> LOCATORS;
 	static {
 		try {
+			LOCATORS = new HashMap<>();
             ObjectMapper mapper = new ObjectMapper();
-            ROOTNODE = mapper.readTree(new File("DataProjects/DataObjects/locators.json"));
+			LOCATORS = mapper.readValue(new File("DataProjects/DataObjects/locators.json"),Map.class);
         } catch (Exception e) {
             e.printStackTrace();
         }
 	}
 	public static By getLocator(PageTitle pageName,String typeOfLocator, Object... values) {
-		JsonNode element = ROOTNODE.path(pageName.getValue()).path(typeOfLocator);
+		String element = LOCATORS.get(pageName.getValue()).get(typeOfLocator);
 		if(values.length == 0) {
-			return By.xpath(element.asString());
+			return By.xpath(element);
 		}
-		return By.xpath(String.format(element.asString(), values));
+		return By.xpath(String.format(element, values));
 	}
 	
 }
