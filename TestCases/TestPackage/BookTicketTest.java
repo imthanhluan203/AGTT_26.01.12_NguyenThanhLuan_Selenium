@@ -155,7 +155,7 @@ public class BookTicketTest extends BaseTest {
 		System.out.println(verifyString);
 		
 		Assert.assertEquals(actualPage, expectedPage,"VP: \"Ticket Price\" page is loaded.");
-		Assert.assertEquals(expectedTableName, actualTableName,"VP: Ticket table shows \"Ticket price from Đà Nẵng to Sài Gòn\"");
+		Assert.assertEquals(actualTableName, expectedTableName,"VP: Ticket table shows \"Ticket price from Đà Nẵng to Sài Gòn\"");
 		Assert.assertEquals(actualPriceHS,  "310000", "VP: Price for each seat displays correctly HS = 310000");
 		Assert.assertEquals(actualPriceSS,  "335000", "VP: Price for each seat displays correctly SS = 335000");
 		Assert.assertEquals(actualPriceSSC, "360000","VP: Price for each seat displays correctly SSC = 360000");
