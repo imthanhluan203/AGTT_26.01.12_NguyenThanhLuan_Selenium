@@ -30,10 +30,20 @@ public class Utilities {
     }
 	public static void click(By locator) {
 		WebElement element = Utilities.waitForElementLocated(locator);
-		JavascriptExecutor js = (JavascriptExecutor) Constant.WEBDRIVER;
-		js.executeScript("arguments[0].click();", element);
+		removeElement();
+		Utilities.scrollToElement(element);
+		element.click();
 	}
-	
+
+	public static void removeElement() {
+		try {
+
+			WebElement element = Constant.WEBDRIVER.findElement(By.xpath("//div[@class='status_alert shadow']"));
+			((JavascriptExecutor) Constant.WEBDRIVER).executeScript("arguments[0].remove();", element);
+		} catch (Exception e) {
+			System.out.println("Không tìm thấy quảng cáo để xóa: " + e.getMessage());
+		}
+	}
 	public static String getTextElement(By locator) {
 		WebElement element = Utilities.waitForElementLocated(locator);
 		scrollToElement(element);
