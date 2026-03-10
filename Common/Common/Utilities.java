@@ -41,7 +41,7 @@ public class Utilities {
 			WebElement element = Constant.WEBDRIVER.findElement(By.xpath("//div[@class='status_alert shadow']"));
 			((JavascriptExecutor) Constant.WEBDRIVER).executeScript("arguments[0].remove();", element);
 		} catch (Exception e) {
-			System.out.println("Không tìm thấy quảng cáo để xóa: " + e.getMessage());
+			return;
 		}
 	}
 	public static String getTextElement(By locator) {

@@ -18,7 +18,6 @@ public class JsonReader {
 			LOCATORS = new HashMap<>();
             ObjectMapper mapper = new ObjectMapper();
 			String filepath = String.format("Resource/Locators/%s/%s.json",folderName,fileName);
-			System.out.println(filepath);
 			LOCATORS = mapper.readValue(new File(filepath),Map.class);
         } catch (Exception e) {
             e.printStackTrace();
